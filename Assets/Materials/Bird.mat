@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8941576605536307502
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Bird
+  m_Shader: {fileID: -6465566751694194690, guid: f95ce0381d38a854a805785303e1176f, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture:
+        m_Texture: {fileID: 2800000, guid: 84653d111427900488e4d5ccedb5f463, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureReplaceSubgraph_14e70a14e22f4d02b10052ef8312ae37_ReplaceTexture_2689191565_Texture2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureReplaceSubgraph_68898b08e9da454aae7f55d8a3d8a16e_ReplaceTexture_2689191565_Texture2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureReplaceSubgraph_88d05008ace043f69972f00d134d6d3f_ReplaceTexture_2689191565_Texture2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture_1:
+        m_Texture: {fileID: 2800000, guid: f4d438c25fd3aaa49aa43167b8baf5a4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture_2:
+        m_Texture: {fileID: 2800000, guid: d286bca35525ef84583885e6da368948, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture_3:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture_4:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _1_Fuzziness: 0.75
+    - _1_Range: 0.03
+    - _1_Scale: 0.29
+    - _2_Fuzziness: 0.06
+    - _2_Range: 0.35
+    - _2_Scale: 0.31
+    - _3_Fuzziness: 0
+    - _3_Range: 0
+    - _3_Scale: 0.33
+    - _4_Fuzziness: 0
+    - _4_Range: 0
+    - _4_Scale: 1
+    - _5_Fuzziness: 0
+    - _5_Range: 0
+    - _5_Scale: 1
+    m_Colors:
+    - _1_Color_To_Replace: {r: 0, g: 0.6784314, b: 0.9333334, a: 1}
+    - _2_Color_To_Replace: {r: 0.9960785, g: 0.7803922, b: 0.17254902, a: 1}
+    - _3_Color_To_Replace: {r: 1, g: 1, b: 1, a: 1}
+    - _4_Color_To_Replace: {r: 0, g: 0, b: 0, a: 0}
+    - _5_Color_To_Replace: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
