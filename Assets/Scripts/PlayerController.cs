@@ -7,12 +7,15 @@ public class PlayerController : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Animator anim;
+    [SerializeField] private Transform character;
     [SerializeField] private RingManager ringManager;
 
     private Rigidbody2D rb;
 
     [Header("Config")]
     [SerializeField] private float horizontalMoveSpeed = 1f;
+    [SerializeField] private float horizontalMoveAcceleration = 0.2f;
+    [SerializeField] [Min(0.01f)] private float horizontalDrag = 1f;
 
     [Space]
     [SerializeField] private float jumpHeight = 2f;
@@ -32,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxisRaw("Vertical"));
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundCastDistance, groundLayer);
         Debug.DrawRay(transform.position, Vector2.down * groundCastDistance, Color.red);
@@ -42,11 +45,24 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z) && grounded)
             jump = true;
 
-        if (Input.GetKeyDown(KeyCode.X))
-            ringManager.AddRingMarker();
+        if (move.x > 0.2f)
+        {
+            Vector3 scale = character.localScale;
+            scale.x = Mathf.Abs(scale.x);
+            character.localScale = scale;
+        }
+        if (move.x < -0.2f)
+        {
+            Vector3 scale = character.localScale;
+            scale.x = -Mathf.Abs(scale.x);
+            character.localScale = scale;
+        }
 
-        if (Input.GetKeyDown(KeyCode.C))
-            ringManager.ResetOuterRing();
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            anim.SetTrigger("Attack");
+            ringManager.AddRingMarker();
+        }
     }
 
     private void FixedUpdate()
@@ -62,7 +78,12 @@ public class PlayerController : MonoBehaviour
         else if (rb.velocity.y < 0)
             rb.gravityScale = gravityFall;
 
-        rb.velocity = new Vector2(move.x * horizontalMoveSpeed, rb.velocity.y);
+        float xVelocity = rb.velocity.x / horizontalDrag;
+
+        if (move.x != 0f && Mathf.Abs(xVelocity + move.x * horizontalMoveAcceleration) <= horizontalMoveSpeed)
+            xVelocity += move.x * horizontalMoveAcceleration;
+
+        rb.velocity = new Vector2(xVelocity, rb.velocity.y);
     }
 
     public static Vector2 SnapAngle(Vector2 vector, int increments = 8)
@@ -73,5 +94,12 @@ public class PlayerController : MonoBehaviour
         snappedDirection = ((snappedDirection * 2) - 1) * Mathf.PI;
         Vector2 snappedVector = new Vector2(Mathf.Cos(snappedDirection), Mathf.Sin(snappedDirection));
         return vector.magnitude * snappedVector;
+    }
+
+    public void Damage(Vector3 source, float amount)
+    {
+        ringManager.ResetOuterRing();
+
+        rb.velocity += (transform.position - source) * Vector2.right * 5f;
     }
 }

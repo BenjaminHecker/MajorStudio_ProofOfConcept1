@@ -56,7 +56,7 @@ public class RingManager : MonoBehaviour
                 marker.UpdateMarker(firstRingAngle);
             }
 
-            firstRingAngle += completedRingSpinSpeed * Time.deltaTime;
+            firstRingAngle += completedRingSpinSpeed / firstRingRadius * Time.deltaTime;
         }
         else
         {
@@ -66,7 +66,7 @@ public class RingManager : MonoBehaviour
                 marker.UpdateMarker(firstRingAngle);
             }
 
-            firstRingAngle += emptyRingSpinSpeed * Time.deltaTime;
+            firstRingAngle += emptyRingSpinSpeed / firstRingRadius * Time.deltaTime;
         }
 
         if (SecondRingComplete)
@@ -77,7 +77,7 @@ public class RingManager : MonoBehaviour
                 marker.UpdateMarker(secondRingAngle);
             }
 
-            secondRingAngle += completedRingSpinSpeed * Time.deltaTime;
+            secondRingAngle -= completedRingSpinSpeed / secondRingRadius * Time.deltaTime;
         }
         else
         {
@@ -87,7 +87,7 @@ public class RingManager : MonoBehaviour
                 marker.UpdateMarker(secondRingAngle);
             }
 
-            secondRingAngle += emptyRingSpinSpeed * Time.deltaTime;
+            secondRingAngle -= emptyRingSpinSpeed / secondRingRadius * Time.deltaTime;
         }
 
         if (ThirdRingComplete)
@@ -98,7 +98,7 @@ public class RingManager : MonoBehaviour
                 marker.UpdateMarker(thirdRingAngle);
             }
 
-            thirdRingAngle += completedRingSpinSpeed * Time.deltaTime;
+            thirdRingAngle += completedRingSpinSpeed / thirdRingRadius * Time.deltaTime;
         }
         else
         {
@@ -108,7 +108,7 @@ public class RingManager : MonoBehaviour
                 marker.UpdateMarker(thirdRingAngle);
             }
 
-            thirdRingAngle += emptyRingSpinSpeed * Time.deltaTime;
+            thirdRingAngle += emptyRingSpinSpeed / thirdRingRadius * Time.deltaTime;
         }
     }
 
