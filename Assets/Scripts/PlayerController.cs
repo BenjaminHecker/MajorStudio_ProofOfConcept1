@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Animator anim;
+    [SerializeField] private RingManager ringManager;
 
     private Rigidbody2D rb;
 
@@ -40,6 +41,12 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z) && grounded)
             jump = true;
+
+        if (Input.GetKeyDown(KeyCode.X))
+            ringManager.AddRingMarker();
+
+        if (Input.GetKeyDown(KeyCode.C))
+            ringManager.ResetOuterRing();
     }
 
     private void FixedUpdate()
