@@ -5,15 +5,15 @@ using UnityEngine;
 public class MaterialParallax : MonoBehaviour
 {
     [SerializeField] private float parallaxFactor = 0.5f;
-    [SerializeField] private List<MeshRenderer> meshes = new List<MeshRenderer>();
+    [SerializeField] private List<Material> materials = new List<Material>();
 
     private void Update()
     {
-        Vector2 offset = transform.position * parallaxFactor;
+        Vector2 offset = transform.position * -parallaxFactor;
 
-        foreach (MeshRenderer mesh in meshes)
+        foreach (Material mat in materials)
         {
-            mesh.sharedMaterial.SetVector("Offset", offset);
+            mat.SetVector("_Offset", offset);
         }
     }
 }
