@@ -1,0 +1,326 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "ParamAngleX",
+			"GroupId": "",
+			"Name": "Angle X"
+		},
+		{
+			"Id": "ParamAngleY",
+			"GroupId": "",
+			"Name": "Angle Y"
+		},
+		{
+			"Id": "ParamAngleZ",
+			"GroupId": "",
+			"Name": "Angle Z"
+		},
+		{
+			"Id": "ParamBodyAngleX",
+			"GroupId": "",
+			"Name": "MoveUp"
+		},
+		{
+			"Id": "ParamBodyAngleX2",
+			"GroupId": "",
+			"Name": "Body X"
+		},
+		{
+			"Id": "ParamBodyAngleY",
+			"GroupId": "",
+			"Name": "Body Y"
+		},
+		{
+			"Id": "ParamBodyAngleZ",
+			"GroupId": "",
+			"Name": "Body Z"
+		},
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "R arm 1"
+		},
+		{
+			"Id": "Param17",
+			"GroupId": "",
+			"Name": "R arm 2"
+		},
+		{
+			"Id": "Param18",
+			"GroupId": "",
+			"Name": "R arm 3"
+		},
+		{
+			"Id": "Param19",
+			"GroupId": "",
+			"Name": "L arm 1"
+		},
+		{
+			"Id": "Param20",
+			"GroupId": "",
+			"Name": "L arm 2"
+		},
+		{
+			"Id": "Param21",
+			"GroupId": "",
+			"Name": "L arm 3"
+		},
+		{
+			"Id": "Param25",
+			"GroupId": "",
+			"Name": "L arm length"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "",
+			"Name": "R to the front"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "",
+			"Name": "R arm 1Layer"
+		},
+		{
+			"Id": "Param22",
+			"GroupId": "",
+			"Name": "arm length"
+		},
+		{
+			"Id": "Param24",
+			"GroupId": "",
+			"Name": "arm slim"
+		},
+		{
+			"Id": "Param16",
+			"GroupId": "",
+			"Name": "leaf lr"
+		},
+		{
+			"Id": "Param28",
+			"GroupId": "",
+			"Name": "leaf 1"
+		},
+		{
+			"Id": "Param29",
+			"GroupId": "",
+			"Name": "leaf 2"
+		},
+		{
+			"Id": "Param23",
+			"GroupId": "",
+			"Name": "leaf length"
+		},
+		{
+			"Id": "Param26",
+			"GroupId": "",
+			"Name": "leaf drag"
+		},
+		{
+			"Id": "ParamEyeLOpen",
+			"GroupId": "",
+			"Name": "EyeL Open"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "",
+			"Name": "WalkLR"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "",
+			"Name": "WalkUD"
+		},
+		{
+			"Id": "Param6",
+			"GroupId": "",
+			"Name": "flower0"
+		},
+		{
+			"Id": "Param8",
+			"GroupId": "",
+			"Name": "flower1"
+		},
+		{
+			"Id": "Param7",
+			"GroupId": "",
+			"Name": "flower2"
+		},
+		{
+			"Id": "Param13",
+			"GroupId": "",
+			"Name": "hair switch"
+		},
+		{
+			"Id": "Param9",
+			"GroupId": "",
+			"Name": "hair1"
+		},
+		{
+			"Id": "Param10",
+			"GroupId": "",
+			"Name": "hair2"
+		},
+		{
+			"Id": "Param11",
+			"GroupId": "",
+			"Name": "hair11"
+		},
+		{
+			"Id": "Param12",
+			"GroupId": "",
+			"Name": "hair12"
+		},
+		{
+			"Id": "Param14",
+			"GroupId": "",
+			"Name": "gown1"
+		},
+		{
+			"Id": "Param15",
+			"GroupId": "",
+			"Name": "gown2"
+		},
+		{
+			"Id": "Param27",
+			"GroupId": "",
+			"Name": "gown3"
+		},
+		{
+			"Id": "ParamBreath",
+			"GroupId": "",
+			"Name": "Breath"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "live2d",
+			"Name": "live2d"
+		},
+		{
+			"Id": "Part2",
+			"Name": "right back hair"
+		},
+		{
+			"Id": "Part3",
+			"Name": "layer top"
+		},
+		{
+			"Id": "Part4",
+			"Name": "front arm"
+		},
+		{
+			"Id": "body",
+			"Name": "body"
+		},
+		{
+			"Id": "Part10",
+			"Name": "back arm + plant"
+		},
+		{
+			"Id": "upper3",
+			"Name": "upper"
+		},
+		{
+			"Id": "Part13",
+			"Name": "left back hair"
+		},
+		{
+			"Id": "PartSketch0",
+			"Name": "[ Guide Image]"
+		},
+		{
+			"Id": "flowers",
+			"Name": "flowers"
+		},
+		{
+			"Id": "head",
+			"Name": "head"
+		},
+		{
+			"Id": "hand",
+			"Name": "hand"
+		},
+		{
+			"Id": "lower2",
+			"Name": "lower"
+		},
+		{
+			"Id": "layer",
+			"Name": "layer"
+		},
+		{
+			"Id": "upper2",
+			"Name": "upper"
+		},
+		{
+			"Id": "Part7",
+			"Name": "body top"
+		},
+		{
+			"Id": "Part8",
+			"Name": "body mid"
+		},
+		{
+			"Id": "Part9",
+			"Name": "body bot"
+		},
+		{
+			"Id": "hand2",
+			"Name": "hand"
+		},
+		{
+			"Id": "lower3",
+			"Name": "lower"
+		},
+		{
+			"Id": "upper",
+			"Name": "upper"
+		},
+		{
+			"Id": "lower",
+			"Name": "lower"
+		},
+		{
+			"Id": "hair",
+			"Name": "hair"
+		},
+		{
+			"Id": "eye",
+			"Name": "eye"
+		},
+		{
+			"Id": "MERGE",
+			"Name": "MERGE"
+		},
+		{
+			"Id": "Part5",
+			"Name": "layer bot"
+		},
+		{
+			"Id": "Part6",
+			"Name": "layer middle"
+		},
+		{
+			"Id": "plant",
+			"Name": "plant"
+		},
+		{
+			"Id": "bang",
+			"Name": "bang"
+		},
+		{
+			"Id": "Part",
+			"Name": "front sidebnag"
+		},
+		{
+			"Id": "Part11",
+			"Name": "front leaves"
+		},
+		{
+			"Id": "Part12",
+			"Name": "back leaves"
+		}
+	]
+}
