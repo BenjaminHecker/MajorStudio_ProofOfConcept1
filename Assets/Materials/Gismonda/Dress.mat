@@ -111,6 +111,10 @@ Material:
     - _5_Color_To_Replace: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
+<<<<<<< Updated upstream
     - _Offset: {r: 2.698363, g: -0.0009999514, b: 0, a: 0}
+=======
+    - _Offset: {r: 0.09355528, g: -0.0009803277, b: 0, a: 0}
+>>>>>>> Stashed changes
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

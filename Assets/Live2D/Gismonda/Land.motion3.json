@@ -1,13 +1,13 @@
 {
 	"Version": 3,
 	"Meta": {
-		"Duration": 0.167,
+		"Duration": 0.17,
 		"Fps": 60.0,
 		"Loop": true,
 		"AreBeziersRestricted": true,
-		"CurveCount": 39,
-		"TotalSegmentCount": 41,
-		"TotalPointCount": 80,
+		"CurveCount": 68,
+		"TotalSegmentCount": 69,
+		"TotalPointCount": 137,
 		"UserDataCount": 0,
 		"TotalUserDataSize": 0
 	},
@@ -39,43 +39,21 @@
 			"Id": "ParamAngleZ",
 			"Segments": [
 				0,
-				-13,
+				-23,
 				0,
 				0.167,
-				-13
+				-23
 			]
 		},
 		{
 			"Target": "Parameter",
-			"Id": "ParamBodyAngleX",
+			"Id": "ParamMoveUp",
 			"Segments": [
 				0,
 				5,
 				0,
-				0.083,
+				0.05,
 				-10,
-				0,
-				0.167,
-				0
-			]
-		},
-		{
-			"Target": "Parameter",
-			"Id": "ParamBodyAngleX2",
-			"Segments": [
-				0,
-				0,
-				0,
-				0.167,
-				0
-			]
-		},
-		{
-			"Target": "Parameter",
-			"Id": "ParamBodyAngleY",
-			"Segments": [
-				0,
-				0,
 				0,
 				0.167,
 				0
@@ -88,11 +66,19 @@
 				0,
 				-2,
 				0,
-				0.083,
-				10,
-				0,
 				0.167,
 				10
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "ParamBodyAngleZ2",
+			"Segments": [
+				0,
+				6,
+				0,
+				0.167,
+				6
 			]
 		},
 		{
@@ -114,7 +100,7 @@
 				0.3,
 				0,
 				0.167,
-				0
+				-0.5
 			]
 		},
 		{
@@ -122,10 +108,10 @@
 			"Id": "Param18",
 			"Segments": [
 				0,
-				0,
+				0.7,
 				0,
 				0.167,
-				0
+				0.7
 			]
 		},
 		{
@@ -207,17 +193,6 @@
 		},
 		{
 			"Target": "Parameter",
-			"Id": "Param24",
-			"Segments": [
-				0,
-				0,
-				0,
-				0.167,
-				0
-			]
-		},
-		{
-			"Target": "Parameter",
 			"Id": "Param16",
 			"Segments": [
 				0,
@@ -229,40 +204,7 @@
 		},
 		{
 			"Target": "Parameter",
-			"Id": "Param28",
-			"Segments": [
-				0,
-				0,
-				0,
-				0.167,
-				0
-			]
-		},
-		{
-			"Target": "Parameter",
-			"Id": "Param29",
-			"Segments": [
-				0,
-				0,
-				0,
-				0.167,
-				0
-			]
-		},
-		{
-			"Target": "Parameter",
 			"Id": "Param23",
-			"Segments": [
-				0,
-				0,
-				0,
-				0.167,
-				0
-			]
-		},
-		{
-			"Target": "Parameter",
-			"Id": "Param26",
 			"Segments": [
 				0,
 				0,
@@ -427,7 +369,7 @@
 		},
 		{
 			"Target": "Parameter",
-			"Id": "Param27",
+			"Id": "ParamBreath",
 			"Segments": [
 				0,
 				0,
@@ -437,14 +379,388 @@
 			]
 		},
 		{
-			"Target": "Parameter",
-			"Id": "ParamBreath",
+			"Target": "PartOpacity",
+			"Id": "Part27",
 			"Segments": [
 				0,
+				1,
 				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "body2",
+			"Segments": [
 				0,
-				0.167,
-				0
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "layer2",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "live2d",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "flowers",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "upper",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "lower",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "head",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "hair",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "bang",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "Part",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "eye",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "MERGE",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "Part2",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "Part3",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "Part4",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "hand",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "lower2",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "body",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "layer",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "Part5",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "Part6",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "upper2",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "Part7",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "Part8",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "Part9",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "Part10",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "hand2",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "plant",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "Part11",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "Part12",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "lower3",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "upper3",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "Part13",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
+			]
+		},
+		{
+			"Target": "PartOpacity",
+			"Id": "PartSketch0",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.17,
+				1
 			]
 		}
 	]

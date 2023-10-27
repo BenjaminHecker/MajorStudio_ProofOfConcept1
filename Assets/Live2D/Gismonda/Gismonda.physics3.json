@@ -530,8 +530,8 @@
 						"Target": "Parameter",
 						"Id": "ParamBodyAngleX"
 					},
-					"Weight": 28,
-					"Type": "X",
+					"Weight": 72,
+					"Type": "Angle",
 					"Reflect": false
 				},
 				{
@@ -539,7 +539,7 @@
 						"Target": "Parameter",
 						"Id": "ParamBreath"
 					},
-					"Weight": 28,
+					"Weight": 15,
 					"Type": "Angle",
 					"Reflect": false
 				}
@@ -586,9 +586,9 @@
 					"Maximum": 20
 				},
 				"Angle": {
-					"Minimum": -47,
+					"Minimum": -119.1,
 					"Default": 0,
-					"Maximum": 47
+					"Maximum": 102.5
 				}
 			}
 		}
