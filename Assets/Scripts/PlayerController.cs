@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [Header("References")]
     [SerializeField] private Animator anim;
     [SerializeField] private Transform character;
+    [SerializeField] private AttackManager attackManager;
     [SerializeField] private RingManager ringManager;
 
     private Rigidbody2D rb;
@@ -37,9 +38,10 @@ public class PlayerController : MonoBehaviour
         HandleHorizontalMovement();
         HandleJump();
 
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X) && attackManager.SlashAttackReady)
         {
             anim.SetTrigger("Attack");
+            attackManager.SlashAttack();
             ringManager.AddRingMarker();
         }
     }
