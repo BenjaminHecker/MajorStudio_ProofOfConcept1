@@ -33,28 +33,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxisRaw("Vertical"));
-
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundCastDistance, groundLayer);
-        Debug.DrawRay(transform.position, Vector2.down * groundCastDistance, Color.red);
-
-        grounded = hit.collider != null;
-
-        if (Input.GetKeyDown(KeyCode.Z) && grounded)
-            jump = true;
-
-        if (move.x > 0.2f)
-        {
-            Vector3 scale = character.localScale;
-            scale.x = Mathf.Abs(scale.x);
-            character.localScale = scale;
-        }
-        if (move.x < -0.2f)
-        {
-            Vector3 scale = character.localScale;
-            scale.x = -Mathf.Abs(scale.x);
-            character.localScale = scale;
-        }
+        CheckGrounded();
+        HandleHorizontalMovement();
+        HandleJump();
 
         if (Input.GetKeyDown(KeyCode.X))
         {
@@ -79,6 +60,54 @@ public class PlayerController : MonoBehaviour
         float xVelocity = move.x * horizontalMoveSpeed;
 
         rb.velocity = new Vector2(xVelocity, rb.velocity.y);
+    }
+
+    private void CheckGrounded()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundCastDistance, groundLayer);
+        Debug.DrawRay(transform.position, Vector2.down * groundCastDistance, Color.red);
+
+        bool prevGrounded = grounded;
+        grounded = hit.collider != null;
+
+        if (grounded && !prevGrounded)
+            anim.SetTrigger("Land");
+    }
+
+    private void HandleHorizontalMovement()
+    {
+        Vector2 prevMove = move;
+        move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+        if (move.x > 0.2f)
+        {
+            Vector3 scale = character.localScale;
+            scale.x = Mathf.Abs(scale.x);
+            character.localScale = scale;
+
+            anim.SetBool("isMoving", true);
+        }
+        else if (move.x < -0.2f)
+        {
+            Vector3 scale = character.localScale;
+            scale.x = -Mathf.Abs(scale.x);
+            character.localScale = scale;
+
+            anim.SetBool("isMoving", true);
+        }
+        else
+        {
+            anim.SetBool("isMoving", false);
+        }
+    }
+
+    private void HandleJump()
+    {
+        if (Input.GetKeyDown(KeyCode.Z) && grounded && !jump)
+        {
+            jump = true;
+            anim.SetTrigger("Jump");
+        }
     }
 
     public static Vector2 SnapAngle(Vector2 vector, int increments = 8)
