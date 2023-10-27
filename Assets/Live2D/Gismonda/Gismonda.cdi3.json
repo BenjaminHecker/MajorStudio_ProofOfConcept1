@@ -152,6 +152,11 @@
 			"Name": "hair switch"
 		},
 		{
+			"Id": "Param30",
+			"GroupId": "",
+			"Name": "cloth curve"
+		},
+		{
 			"Id": "Param9",
 			"GroupId": "",
 			"Name": "hair1"
