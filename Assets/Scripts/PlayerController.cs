@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
 
     private Vector2 move;
-    private bool grounded = false;
+    private bool grounded = true;
     private bool jump = false;
 
     private void Awake()
@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity += Vector2.up * Mathf.Sqrt(-2f * jumpHeight * gravityRise * Physics2D.gravity.y);
             jump = false;
+            anim.SetTrigger("Jump");
         }
 
         if (rb.velocity.y > 0)
@@ -76,10 +77,9 @@ public class PlayerController : MonoBehaviour
 
     private void HandleHorizontalMovement()
     {
-        Vector2 prevMove = move;
         move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-        if (move.x > 0.2f)
+        if (move.x > 0.1f)
         {
             Vector3 scale = character.localScale;
             scale.x = Mathf.Abs(scale.x);
@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
 
             anim.SetBool("isMoving", true);
         }
-        else if (move.x < -0.2f)
+        else if (move.x < -0.1f)
         {
             Vector3 scale = character.localScale;
             scale.x = -Mathf.Abs(scale.x);
@@ -104,10 +104,7 @@ public class PlayerController : MonoBehaviour
     private void HandleJump()
     {
         if (Input.GetKeyDown(KeyCode.Z) && grounded && !jump)
-        {
             jump = true;
-            anim.SetTrigger("Jump");
-        }
     }
 
     public static Vector2 SnapAngle(Vector2 vector, int increments = 8)
