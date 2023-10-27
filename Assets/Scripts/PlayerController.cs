@@ -14,8 +14,6 @@ public class PlayerController : MonoBehaviour
 
     [Header("Config")]
     [SerializeField] private float horizontalMoveSpeed = 1f;
-    [SerializeField] private float horizontalMoveAcceleration = 0.2f;
-    [SerializeField] [Min(0.01f)] private float horizontalDrag = 1f;
 
     [Space]
     [SerializeField] private float jumpHeight = 2f;
@@ -78,10 +76,7 @@ public class PlayerController : MonoBehaviour
         else if (rb.velocity.y < 0)
             rb.gravityScale = gravityFall;
 
-        float xVelocity = rb.velocity.x / horizontalDrag;
-
-        if (move.x != 0f && Mathf.Abs(xVelocity + move.x * horizontalMoveAcceleration) <= horizontalMoveSpeed)
-            xVelocity += move.x * horizontalMoveAcceleration;
+        float xVelocity = move.x * horizontalMoveSpeed;
 
         rb.velocity = new Vector2(xVelocity, rb.velocity.y);
     }
