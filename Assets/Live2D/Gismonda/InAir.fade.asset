@@ -16,7 +16,7 @@ MonoBehaviour:
   FadeInTime: 1
   FadeOutTime: 1
   ParameterIds:
-  - ParamBodyAngleX
+  - ParamMoveUp
   - ParamBodyAngleZ
   - Param
   - Param17
