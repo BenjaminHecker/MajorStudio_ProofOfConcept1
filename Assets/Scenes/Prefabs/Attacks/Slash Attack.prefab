@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c0f11dbb0129594996dfdb741c18a01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hurtbox: {fileID: 5302054841434624658}
   trail: {fileID: 2938425859705487034}
 --- !u!1 &5908627866766341421
 GameObject:
@@ -111,6 +112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 552293258260642212}
   - component: {fileID: 7127249420544356219}
+  - component: {fileID: 5302054841434624658}
   m_Layer: 0
   m_Name: Hurtbox
   m_TagString: Untagged
@@ -178,6 +180,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.3581767, y: 3.43}
   m_EdgeRadius: 0
+--- !u!114 &5302054841434624658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5908627866766341421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b824000c46e69f446a1d14a84130e4ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: Enemy
 --- !u!1 &6998583204987519355
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +246,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dd6873ae7e203b74bb668af926c791d1, type: 2}
+  - {fileID: 2100000, guid: ace07908b08c4a04f971077d213937c4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

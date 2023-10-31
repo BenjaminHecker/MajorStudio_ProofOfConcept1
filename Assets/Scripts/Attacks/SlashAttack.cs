@@ -9,8 +9,6 @@ public class SlashAttack : MonoBehaviour
 
     private Animator anim;
 
-    private bool hitOpponent = true;
-
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -18,6 +16,7 @@ public class SlashAttack : MonoBehaviour
 
     private void Start()
     {
+        hurtbox.gameObject.SetActive(false);
         hurtbox.onHit += OnHit;
     }
 
@@ -28,27 +27,25 @@ public class SlashAttack : MonoBehaviour
 
     public void Trigger()
     {
-        hitOpponent = false;
-        trail.Clear();
         anim.SetTrigger("Slash");
     }
 
-    public void EnableTrail()
+    public void StartAttack()
     {
+        hurtbox.gameObject.SetActive(true);
+        trail.Clear();
         trail.enabled = true;
     }
 
-    public void DisableTrail()
+    public void EndAttack()
     {
+        hurtbox.gameObject.SetActive(false);
         trail.enabled = false;
     }
 
     private void OnHit()
     {
-        if (!hitOpponent)
-        {
-            hitOpponent = true;
-            Debug.Log("Hit");
-        }
+        hurtbox.gameObject.SetActive(false);
+        Debug.Log("Hit");
     }
 }
