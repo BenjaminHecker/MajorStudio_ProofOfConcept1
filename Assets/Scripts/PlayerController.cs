@@ -5,11 +5,14 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    private static PlayerController instance;
+
     [Header("References")]
     [SerializeField] private Animator anim;
     [SerializeField] private Transform character;
     [SerializeField] private AttackManager attackManager;
     [SerializeField] private RingManager ringManager;
+    [SerializeField] private HealthBar healthBar;
 
     private Rigidbody2D rb;
 
@@ -29,9 +32,19 @@ public class PlayerController : MonoBehaviour
 
     public static bool freezeCharacterDirection = false;
 
+    [Header("Health")]
+    [SerializeField] private float healthMax;
+    [SerializeField] private float healAmount;
+
+    private float health;
+
     private void Awake()
     {
+        instance = this;
+
         rb = GetComponent<Rigidbody2D>();
+
+        health = healthMax;
     }
 
     private void Update()
@@ -44,7 +57,6 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetTrigger("Attack");
             attackManager.SlashAttack();
-            ringManager.AddRingMarker();
 
             freezeCharacterDirection = true;
         }
@@ -129,10 +141,26 @@ public class PlayerController : MonoBehaviour
         return vector.magnitude * snappedVector;
     }
 
+    public static void HitEnemy()
+    {
+        instance.ringManager.AddRingMarker();
+
+        instance.health = Mathf.Clamp(instance.health + instance.healAmount, 0f, instance.healthMax);
+        instance.UpdateHealth();
+    }
+
     public void Damage(Vector3 source, float amount)
     {
         ringManager.ResetOuterRing();
 
+        health = Mathf.Clamp(health - amount, 0f, healthMax);
+        UpdateHealth();
+
         rb.velocity += (transform.position - source) * Vector2.right * 5f;
+    }
+
+    private void UpdateHealth()
+    {
+        healthBar.SetHealth(Mathf.InverseLerp(0f, healthMax, health));
     }
 }

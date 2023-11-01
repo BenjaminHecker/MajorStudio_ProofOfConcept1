@@ -46,6 +46,6 @@ public class SlashAttack : MonoBehaviour
     private void OnHit()
     {
         hurtbox.gameObject.SetActive(false);
-        Debug.Log("Hit");
+        PlayerController.HitEnemy();
     }
 }
