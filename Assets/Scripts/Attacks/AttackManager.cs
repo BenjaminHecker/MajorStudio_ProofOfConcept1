@@ -15,6 +15,7 @@ public class AttackManager : MonoBehaviour
     public void SlashAttack()
     {
         StartCoroutine(SlashAttackRoutine());
+        SoundManager.PlayMisc("Slash Attack");
     }
 
     private IEnumerator SlashAttackRoutine()
@@ -28,5 +29,7 @@ public class AttackManager : MonoBehaviour
         yield return new WaitForSeconds(slashAttackCooldown);
 
         slashAttackOnCooldown = false;
+
+        PlayerController.freezeCharacterDirection = false;
     }
 }

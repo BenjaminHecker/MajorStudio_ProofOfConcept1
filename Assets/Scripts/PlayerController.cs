@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     private bool grounded = true;
     private bool jump = false;
 
+    public static bool freezeCharacterDirection = false;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -43,6 +45,8 @@ public class PlayerController : MonoBehaviour
             anim.SetTrigger("Attack");
             attackManager.SlashAttack();
             ringManager.AddRingMarker();
+
+            freezeCharacterDirection = true;
         }
     }
 
@@ -83,17 +87,23 @@ public class PlayerController : MonoBehaviour
 
         if (move.x > 0.1f)
         {
-            Vector3 scale = character.localScale;
-            scale.x = Mathf.Abs(scale.x);
-            character.localScale = scale;
+            if (!freezeCharacterDirection)
+            {
+                Vector3 scale = character.localScale;
+                scale.x = Mathf.Abs(scale.x);
+                character.localScale = scale;
+            }
 
             anim.SetBool("isMoving", true);
         }
         else if (move.x < -0.1f)
         {
-            Vector3 scale = character.localScale;
-            scale.x = -Mathf.Abs(scale.x);
-            character.localScale = scale;
+            if (!freezeCharacterDirection)
+            {
+                Vector3 scale = character.localScale;
+                scale.x = -Mathf.Abs(scale.x);
+                character.localScale = scale;
+            }
 
             anim.SetBool("isMoving", true);
         }

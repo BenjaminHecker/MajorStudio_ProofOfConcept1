@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    private void Start()
+    {
+        SoundManager.PlayMusic("Theme");
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
