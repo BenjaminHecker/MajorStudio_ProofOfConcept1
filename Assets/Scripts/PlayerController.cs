@@ -26,6 +26,11 @@ public class PlayerController : MonoBehaviour
     private bool grounded = false;
     private bool jump = false;
 
+    public float dashForce = 5;
+    public float dashTime = 0.4f;
+
+    private bool isDashing;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -34,14 +39,36 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         CheckGrounded();
-        HandleHorizontalMovement();
+        if (!isDashing)
+        {
+            HandleHorizontalMovement();
+        }
         HandleJump();
+        
 
         if (Input.GetKeyDown(KeyCode.X))
         {
             anim.SetTrigger("Attack");
             ringManager.AddRingMarker();
         }
+
+        if(Input.GetKeyDown(KeyCode.C)) {
+            if(!isDashing)
+            {
+                anim.SetTrigger("Dash");
+                StartCoroutine(Dash());
+            }
+ 
+        }
+    }
+
+    private IEnumerator Dash()
+    {
+        isDashing = true;
+        rb.velocity = Vector2.right * dashForce;
+        yield return new WaitForSeconds(dashTime);
+        rb.velocity = Vector2.zero;
+        isDashing = false;
     }
 
     private void FixedUpdate()
@@ -77,7 +104,7 @@ public class PlayerController : MonoBehaviour
     private void HandleHorizontalMovement()
     {
         Vector2 prevMove = move;
-        move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxisRaw("Vertical"));
+        move = new Vector2(Input.GetAxis("Horizontal"), 0);
 
         if (move.x > 0.2f)
         {

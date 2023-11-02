@@ -17,7 +17,7 @@
 			"Name": "Angle Z"
 		},
 		{
-			"Id": "ParamBodyAngleX",
+			"Id": "ParamMoveUp",
 			"GroupId": "",
 			"Name": "MoveUp"
 		},
@@ -200,6 +200,11 @@
 			"Id": "ParamBreath",
 			"GroupId": "",
 			"Name": "Breath"
+		},
+		{
+			"Id": "ParamWind",
+			"GroupId": "",
+			"Name": "Wind"
 		}
 	],
 	"ParameterGroups": [],

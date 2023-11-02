@@ -7440,6 +7440,67 @@ MonoBehaviour:
   _renderOrder: 55
   _depthOffset: 0.00001
   _opacity: 1
+--- !u!1 &5450676761860766836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 445023756586363588}
+  - component: {fileID: 4735314253015465767}
+  - component: {fileID: 54668474757027046}
+  m_Layer: 0
+  m_Name: ParamWind
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &445023756586363588
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5450676761860766836}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 620726603122128146}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4735314253015465767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5450676761860766836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafbb7ec1700e8147a48dbed2e4e543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unmanagedIndex: 40
+  Value: 0
+--- !u!114 &54668474757027046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5450676761860766836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed02a7b9de37c2044b0bb2e36d490a6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Wind
+  DisplayName: 
 --- !u!1 &5720829445114491155
 GameObject:
   m_ObjectHideFlags: 0
@@ -7949,67 +8010,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Body Y
-  DisplayName: 
---- !u!1 &6296592186525976957
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3647715876523526250}
-  - component: {fileID: 4426028822937675122}
-  - component: {fileID: 7229033837595907201}
-  m_Layer: 0
-  m_Name: ParamBodyAngleX
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3647715876523526250
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6296592186525976957}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 620726603122128146}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4426028822937675122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6296592186525976957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dafbb7ec1700e8147a48dbed2e4e543c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _unmanagedIndex: 3
-  Value: 0
---- !u!114 &7229033837595907201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6296592186525976957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed02a7b9de37c2044b0bb2e36d490a6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: MoveUp
   DisplayName: 
 --- !u!1 &6299613815095378916
 GameObject:
@@ -10582,7 +10582,7 @@ Transform:
   - {fileID: 8232506548970165350}
   - {fileID: 728230688602451630}
   - {fileID: 305104521884922115}
-  - {fileID: 3647715876523526250}
+  - {fileID: 3664665813319229008}
   - {fileID: 6766528913783707603}
   - {fileID: 785123774446218448}
   - {fileID: 6425704579483803304}
@@ -10619,6 +10619,7 @@ Transform:
   - {fileID: 2676825563232187325}
   - {fileID: 8362501469507827739}
   - {fileID: 2326085206988297441}
+  - {fileID: 445023756586363588}
   m_Father: {fileID: 4279844518953034918}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8172495412814077207
@@ -10849,14 +10850,20 @@ MonoBehaviour:
       - SourceId: ParamBreath
         ScaleOfTranslation: {x: 0, y: 0}
         AngleScale: 0
-        Weight: 100
+        Weight: 79
         SourceComponent: 2
         IsInverted: 0
-      - SourceId: ParamBodyAngleX
+      - SourceId: ParamMoveUp
         ScaleOfTranslation: {x: 0, y: 0}
         AngleScale: 0
         Weight: 12
         SourceComponent: 0
+        IsInverted: 0
+      - SourceId: ParamWind
+        ScaleOfTranslation: {x: 0, y: 0}
+        AngleScale: 0
+        Weight: 21
+        SourceComponent: 2
         IsInverted: 0
       Output:
       - DestinationId: Param6
@@ -10921,14 +10928,20 @@ MonoBehaviour:
       - SourceId: ParamBreath
         ScaleOfTranslation: {x: 0, y: 0}
         AngleScale: 0
-        Weight: 70
+        Weight: 60
         SourceComponent: 2
         IsInverted: 0
-      - SourceId: ParamBodyAngleX
+      - SourceId: ParamMoveUp
         ScaleOfTranslation: {x: 0, y: 0}
         AngleScale: 0
         Weight: 20
         SourceComponent: 0
+        IsInverted: 0
+      - SourceId: ParamWind
+        ScaleOfTranslation: {x: 0, y: 0}
+        AngleScale: 0
+        Weight: 40
+        SourceComponent: 2
         IsInverted: 0
       Output:
       - DestinationId: Param9
@@ -11016,11 +11029,17 @@ MonoBehaviour:
         Weight: 23
         SourceComponent: 0
         IsInverted: 0
-      - SourceId: ParamBodyAngleX
+      - SourceId: ParamMoveUp
         ScaleOfTranslation: {x: 0, y: 0}
         AngleScale: 0
         Weight: 8
         SourceComponent: 0
+        IsInverted: 0
+      - SourceId: ParamWind
+        ScaleOfTranslation: {x: 0, y: 0}
+        AngleScale: 0
+        Weight: 30
+        SourceComponent: 2
         IsInverted: 0
       Output:
       - DestinationId: Param28
@@ -11067,7 +11086,7 @@ MonoBehaviour:
       - SourceId: Param13
         ScaleOfTranslation: {x: 0, y: 0}
         AngleScale: 0
-        Weight: 44
+        Weight: 39
         SourceComponent: 0
         IsInverted: 0
       - SourceId: ParamBreath
@@ -11079,8 +11098,14 @@ MonoBehaviour:
       - SourceId: Param4
         ScaleOfTranslation: {x: 0, y: 0}
         AngleScale: 0
-        Weight: 56
+        Weight: 45
         SourceComponent: 0
+        IsInverted: 0
+      - SourceId: ParamWind
+        ScaleOfTranslation: {x: 0, y: 0}
+        AngleScale: 0
+        Weight: 30
+        SourceComponent: 2
         IsInverted: 0
       Output:
       - DestinationId: Param14
@@ -11136,7 +11161,7 @@ MonoBehaviour:
           Default: 0
     - Name: body y
       Input:
-      - SourceId: ParamBodyAngleX
+      - SourceId: ParamMoveUp
         ScaleOfTranslation: {x: 0, y: 0}
         AngleScale: 0
         Weight: 72
@@ -12710,6 +12735,67 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: plant
+  DisplayName: 
+--- !u!1 &9168368465976955595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3664665813319229008}
+  - component: {fileID: 899131097419867382}
+  - component: {fileID: 5373789370884523114}
+  m_Layer: 0
+  m_Name: ParamMoveUp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3664665813319229008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9168368465976955595}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 620726603122128146}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &899131097419867382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9168368465976955595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafbb7ec1700e8147a48dbed2e4e543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unmanagedIndex: 3
+  Value: 0
+--- !u!114 &5373789370884523114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9168368465976955595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed02a7b9de37c2044b0bb2e36d490a6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: MoveUp
   DisplayName: 
 --- !u!1 &9181972880882214088
 GameObject:

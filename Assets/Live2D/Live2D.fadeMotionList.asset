@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
   m_Name: Live2D.fadeMotionList
   m_EditorClassIdentifier: 
-  MotionInstanceIds: 8c2cffff562cffff5052f9ff8c82ffff6482ffff3c82ffff0882ffffd481ffffac81ffff842efeff
+  MotionInstanceIds: 8c2cffff562cffff5052f9ff8c82ffff6482ffff3c82ffff0882ffffd481ffffac81ffff842efeff02f3ffffd8f2ffffe262feffba62feff9262feff
   CubismFadeMotionObjects:
   - {fileID: 11400000, guid: c500ff31cb5179044894ed5a53a0bcf0, type: 2}
   - {fileID: 11400000, guid: b83b4025e8e260540bf0b091bbc1b9e1, type: 2}
@@ -24,3 +24,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ed65cf3fdbbf06444b0050cc813f693e, type: 2}
   - {fileID: 11400000, guid: 8e4c4ee8b4033cf48870475ea48cbcdc, type: 2}
   - {fileID: 11400000, guid: 4800517dcc8ccdd4399755326735fa76, type: 2}
+  - {fileID: 11400000, guid: 5d9f43705d9b14f4496f15f1f3939f00, type: 2}
+  - {fileID: 11400000, guid: c0cd5842f2ea3644db3c30fabea27ce2, type: 2}
+  - {fileID: 11400000, guid: 5230331dffc45bc41937a68056e42a87, type: 2}
+  - {fileID: 11400000, guid: 5f4fc45efacb3d747b535dfc051481c2, type: 2}
+  - {fileID: 11400000, guid: 45bad8fb6c252cd40b165e8167aa764d, type: 2}
