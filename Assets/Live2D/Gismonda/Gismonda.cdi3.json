@@ -17,7 +17,7 @@
 			"Name": "Angle Z"
 		},
 		{
-			"Id": "ParamBodyAngleX",
+			"Id": "ParamMoveUp",
 			"GroupId": "",
 			"Name": "MoveUp"
 		},
@@ -35,6 +35,11 @@
 			"Id": "ParamBodyAngleZ",
 			"GroupId": "",
 			"Name": "Body Z"
+		},
+		{
+			"Id": "ParamBodyAngleZ2",
+			"GroupId": "",
+			"Name": "Body Z2"
 		},
 		{
 			"Id": "Param",
@@ -195,10 +200,19 @@
 			"Id": "ParamBreath",
 			"GroupId": "",
 			"Name": "Breath"
+		},
+		{
+			"Id": "ParamWind",
+			"GroupId": "",
+			"Name": "Wind"
 		}
 	],
 	"ParameterGroups": [],
 	"Parts": [
+		{
+			"Id": "Part27",
+			"Name": "gismonda_unmerged2.psd (Corresponding layer not found)"
+		},
 		{
 			"Id": "live2d",
 			"Name": "live2d"
@@ -234,6 +248,10 @@
 		{
 			"Id": "PartSketch0",
 			"Name": "[ Guide Image]"
+		},
+		{
+			"Id": "body2",
+			"Name": "body"
 		},
 		{
 			"Id": "flowers",
@@ -278,6 +296,10 @@
 		{
 			"Id": "lower3",
 			"Name": "lower"
+		},
+		{
+			"Id": "layer2",
+			"Name": "layer"
 		},
 		{
 			"Id": "upper",

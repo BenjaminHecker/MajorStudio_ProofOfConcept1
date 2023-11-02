@@ -2,7 +2,7 @@
 	"Version": 3,
 	"Meta": {
 		"PhysicsSettingCount": 5,
-		"TotalInputCount": 16,
+		"TotalInputCount": 20,
 		"TotalOutputCount": 13,
 		"VertexCount": 16,
 		"Fps": 60,
@@ -48,17 +48,26 @@
 						"Target": "Parameter",
 						"Id": "ParamBreath"
 					},
-					"Weight": 100,
+					"Weight": 79,
 					"Type": "Angle",
 					"Reflect": false
 				},
 				{
 					"Source": {
 						"Target": "Parameter",
-						"Id": "ParamBodyAngleX"
+						"Id": "ParamMoveUp"
 					},
 					"Weight": 12,
 					"Type": "X",
+					"Reflect": false
+				},
+				{
+					"Source": {
+						"Target": "Parameter",
+						"Id": "ParamWind"
+					},
+					"Weight": 21,
+					"Type": "Angle",
 					"Reflect": false
 				}
 			],
@@ -169,17 +178,26 @@
 						"Target": "Parameter",
 						"Id": "ParamBreath"
 					},
-					"Weight": 70,
+					"Weight": 60,
 					"Type": "Angle",
 					"Reflect": false
 				},
 				{
 					"Source": {
 						"Target": "Parameter",
-						"Id": "ParamBodyAngleX"
+						"Id": "ParamMoveUp"
 					},
 					"Weight": 20,
 					"Type": "X",
+					"Reflect": false
+				},
+				{
+					"Source": {
+						"Target": "Parameter",
+						"Id": "ParamWind"
+					},
+					"Weight": 40,
+					"Type": "Angle",
 					"Reflect": false
 				}
 			],
@@ -325,10 +343,19 @@
 				{
 					"Source": {
 						"Target": "Parameter",
-						"Id": "ParamBodyAngleX"
+						"Id": "ParamMoveUp"
 					},
 					"Weight": 8,
 					"Type": "X",
+					"Reflect": false
+				},
+				{
+					"Source": {
+						"Target": "Parameter",
+						"Id": "ParamWind"
+					},
+					"Weight": 30,
+					"Type": "Angle",
 					"Reflect": false
 				}
 			],
@@ -409,7 +436,7 @@
 						"Target": "Parameter",
 						"Id": "Param13"
 					},
-					"Weight": 44,
+					"Weight": 39,
 					"Type": "X",
 					"Reflect": false
 				},
@@ -427,8 +454,17 @@
 						"Target": "Parameter",
 						"Id": "Param4"
 					},
-					"Weight": 56,
+					"Weight": 45,
 					"Type": "X",
+					"Reflect": false
+				},
+				{
+					"Source": {
+						"Target": "Parameter",
+						"Id": "ParamWind"
+					},
+					"Weight": 30,
+					"Type": "Angle",
 					"Reflect": false
 				}
 			],
@@ -528,10 +564,10 @@
 				{
 					"Source": {
 						"Target": "Parameter",
-						"Id": "ParamBodyAngleX"
+						"Id": "ParamMoveUp"
 					},
-					"Weight": 28,
-					"Type": "X",
+					"Weight": 72,
+					"Type": "Angle",
 					"Reflect": false
 				},
 				{
@@ -539,7 +575,7 @@
 						"Target": "Parameter",
 						"Id": "ParamBreath"
 					},
-					"Weight": 28,
+					"Weight": 15,
 					"Type": "Angle",
 					"Reflect": false
 				}
@@ -586,9 +622,9 @@
 					"Maximum": 20
 				},
 				"Angle": {
-					"Minimum": -47,
+					"Minimum": -119.1,
 					"Default": 0,
-					"Maximum": 47
+					"Maximum": 102.5
 				}
 			}
 		}
