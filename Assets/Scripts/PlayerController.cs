@@ -26,9 +26,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundCastDistance = 0.2f;
     [SerializeField] private LayerMask groundLayer;
 
+    [Space]
+    [SerializeField] private float dashSpeed;
+    [SerializeField] private float dashDuration;
+
     private Vector2 move;
     private bool grounded = true;
     private bool jump = false;
+    private bool dashing = false;
 
     public static bool freezeCharacterDirection = false;
 

@@ -9,16 +9,11 @@ public class Hurtbox : MonoBehaviour
     public delegate void Hit();
     public Hit onHit;
 
-    private Rigidbody2D rb;
+    private bool collidingWithEnemy = false;
 
-    private void Awake()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        rb = GetComponent<Rigidbody2D>();
-    }
-
-    private void Update()
-    {
-        rb.AddForce(Vector2.zero);
+        
     }
 
     private void OnTriggerStay2D(Collider2D collision)
