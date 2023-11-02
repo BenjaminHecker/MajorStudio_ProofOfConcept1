@@ -6,9 +6,9 @@ public class RingManager : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private RingMarker ringMarkerPrefab;
-    [SerializeField] private Transform firstRing;
-    [SerializeField] private Transform secondRing;
-    [SerializeField] private Transform thirdRing;
+    [SerializeField] private SpriteRenderer firstRing;
+    [SerializeField] private SpriteRenderer secondRing;
+    [SerializeField] private SpriteRenderer thirdRing;
 
     [Space]
     [SerializeField] private int firstRingCapacity = 3;
@@ -48,6 +48,18 @@ public class RingManager : MonoBehaviour
 
     public void Update()
     {
+        Color newFirstRingColor = firstRing.color;
+        newFirstRingColor.a = Mathf.InverseLerp(0f, firstRingCapacity, firstRingMarkers.Count);
+        firstRing.color = newFirstRingColor;
+
+        Color newSecondRingColor = secondRing.color;
+        newSecondRingColor.a = Mathf.InverseLerp(0f, secondRingCapacity, secondRingMarkers.Count);
+        secondRing.color = newSecondRingColor;
+
+        Color newThirdRingColor = thirdRing.color;
+        newThirdRingColor.a = Mathf.InverseLerp(0f, thirdRingCapacity, thirdRingMarkers.Count);
+        thirdRing.color = newThirdRingColor;
+        
         if (FirstRingComplete)
         {
             foreach (RingMarker marker in firstRingMarkers)
@@ -120,7 +132,7 @@ public class RingManager : MonoBehaviour
             {
                 if (!ThirdRingComplete)
                 {
-                    RingMarker newMarker = Instantiate(ringMarkerPrefab, thirdRing);
+                    RingMarker newMarker = Instantiate(ringMarkerPrefab, thirdRing.transform);
                     thirdRingMarkers.Add(newMarker);
 
                     newMarker.radius = thirdRingRadius;
@@ -130,7 +142,7 @@ public class RingManager : MonoBehaviour
             }
             else
             {
-                RingMarker newMarker = Instantiate(ringMarkerPrefab, secondRing);
+                RingMarker newMarker = Instantiate(ringMarkerPrefab, secondRing.transform);
                 secondRingMarkers.Add(newMarker);
 
                 newMarker.radius = secondRingRadius;
@@ -140,7 +152,7 @@ public class RingManager : MonoBehaviour
         }
         else
         {
-            RingMarker newMarker = Instantiate(ringMarkerPrefab, firstRing);
+            RingMarker newMarker = Instantiate(ringMarkerPrefab, firstRing.transform);
             firstRingMarkers.Add(newMarker);
 
             newMarker.radius = firstRingRadius;
