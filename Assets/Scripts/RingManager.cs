@@ -33,18 +33,17 @@ public class RingManager : MonoBehaviour
     private float thirdRingAngle = 0f;
 
     public bool FirstRingComplete { get { return firstRingMarkers.Count >= firstRingCapacity; } }
-    public bool SecondRingComplete { get { return FirstRingComplete && secondRingMarkers.Count >= secondRingCapacity; } }
-    public bool ThirdRingComplete { get { return SecondRingComplete && thirdRingMarkers.Count >= thirdRingCapacity; } }
+    public bool SecondRingComplete { get { return secondRingMarkers.Count >= secondRingCapacity; } }
+    public bool ThirdRingComplete { get { return thirdRingMarkers.Count >= thirdRingCapacity; } }
     public int CompleteRingsCount
     {
         get
         {
-            if (ThirdRingComplete) return 3;
-            if (SecondRingComplete) return 2;
-            if (FirstRingComplete) return 1;
-            return 0;
+            return (FirstRingComplete ? 1 : 0) + (SecondRingComplete ? 1 : 0) + (ThirdRingComplete ? 1 : 0);
         }
     }
+
+    
 
     public void Update()
     {
@@ -163,25 +162,53 @@ public class RingManager : MonoBehaviour
 
     public void ResetOuterRing()
     {
-        switch (CompleteRingsCount)
+        if (ThirdRingComplete)
         {
-            case 2:
-                foreach (RingMarker marker in thirdRingMarkers)
-                    Destroy(marker.gameObject);
-                thirdRingMarkers.Clear();
-                break;
+            foreach (RingMarker marker in thirdRingMarkers)
+                Destroy(marker.gameObject);
+            thirdRingMarkers.Clear();
+        }
+        else if (SecondRingComplete)
+        {
+            foreach (RingMarker marker in secondRingMarkers)
+                Destroy(marker.gameObject);
+            secondRingMarkers.Clear();
+        }
+        else if (FirstRingComplete)
+        {
+            foreach (RingMarker marker in firstRingMarkers)
+                Destroy(marker.gameObject);
+            firstRingMarkers.Clear();
+        }
+    }
 
-            case 1:
-                foreach (RingMarker marker in secondRingMarkers)
-                    Destroy(marker.gameObject);
-                secondRingMarkers.Clear();
-                break;
+    public void RemoveRings(int count)
+    {
+        int removeCount = 0;
 
-            case 0:
-                foreach (RingMarker marker in firstRingMarkers)
-                    Destroy(marker.gameObject);
-                firstRingMarkers.Clear();
-                break;
+        if (removeCount < count && FirstRingComplete)
+        {
+            removeCount++;
+
+            foreach (RingMarker marker in firstRingMarkers)
+                Destroy(marker.gameObject);
+            firstRingMarkers.Clear();
+        }
+        if (removeCount < count && SecondRingComplete)
+        {
+            removeCount++;
+
+            foreach (RingMarker marker in secondRingMarkers)
+                Destroy(marker.gameObject);
+            secondRingMarkers.Clear();
+        }
+        if (removeCount < count && ThirdRingComplete)
+        {
+            removeCount++;
+
+            foreach (RingMarker marker in thirdRingMarkers)
+                Destroy(marker.gameObject);
+            thirdRingMarkers.Clear();
         }
     }
 }

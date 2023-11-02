@@ -9,9 +9,9 @@ public class PlayerController : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private Animator anim;
-    [SerializeField] private Transform character;
-    [SerializeField] private AttackManager attackManager;
-    [SerializeField] private RingManager ringManager;
+    [SerializeField] public Transform character;
+    [SerializeField] public AttackManager attackManager;
+    [SerializeField] public RingManager ringManager;
     [SerializeField] private HealthBar healthBar;
 
     private Rigidbody2D rb;
@@ -26,16 +26,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundCastDistance = 0.2f;
     [SerializeField] private LayerMask groundLayer;
 
-    [Space]
-    [SerializeField] private float dashSpeed;
-    [SerializeField] private float dashDuration;
-
     private Vector2 move;
     private bool grounded = true;
     private bool jump = false;
-    private bool dashing = false;
 
-    public static bool freezeCharacterDirection = false;
+    public bool freezeCharacterDirection = false;
+    public bool freezeMovementY = false;
 
     [Header("Health")]
     [SerializeField] private float healthMax;
@@ -50,6 +46,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         health = healthMax;
+
+        attackManager.Setup(this);
     }
 
     private void Update()
@@ -62,8 +60,12 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetTrigger("Attack");
             attackManager.SlashAttack();
+        }
 
-            freezeCharacterDirection = true;
+        if (Input.GetKeyDown(KeyCode.C) && attackManager.DashSpecialReady)
+        {
+            attackManager.DashSpecial();
+            ringManager.RemoveRings(1);
         }
     }
 
@@ -76,14 +78,17 @@ public class PlayerController : MonoBehaviour
             anim.SetTrigger("Jump");
         }
 
-        if (rb.velocity.y > 0)
+        if (freezeMovementY)
+            rb.gravityScale = 0;
+        else if (rb.velocity.y > 0)
             rb.gravityScale = gravityRise;
         else if (rb.velocity.y < 0)
             rb.gravityScale = gravityFall;
 
         float xVelocity = move.x * horizontalMoveSpeed;
+        float yVelocity = freezeMovementY ? 0 : rb.velocity.y;
 
-        rb.velocity = new Vector2(xVelocity, rb.velocity.y);
+        rb.velocity = new Vector2(xVelocity, yVelocity);
     }
 
     private void CheckGrounded()

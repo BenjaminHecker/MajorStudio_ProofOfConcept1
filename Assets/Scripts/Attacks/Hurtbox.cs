@@ -9,16 +9,24 @@ public class Hurtbox : MonoBehaviour
     public delegate void Hit();
     public Hit onHit;
 
+    [HideInInspector] public bool active = false;
     private bool collidingWithEnemy = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.CompareTag(target))
+            collidingWithEnemy = true;
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag(target))
+            collidingWithEnemy = false;
+    }
+
+    private void Update()
+    {
+        if (active && collidingWithEnemy)
             HitOpponent();
     }
 

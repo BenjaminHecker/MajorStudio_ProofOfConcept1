@@ -16,7 +16,6 @@ public class SlashAttack : MonoBehaviour
 
     private void Start()
     {
-        hurtbox.gameObject.SetActive(false);
         hurtbox.onHit += OnHit;
     }
 
@@ -32,20 +31,20 @@ public class SlashAttack : MonoBehaviour
 
     public void StartAttack()
     {
-        hurtbox.gameObject.SetActive(true);
+        hurtbox.active = true;
         trail.Clear();
         trail.enabled = true;
     }
 
     public void EndAttack()
     {
-        hurtbox.gameObject.SetActive(false);
+        hurtbox.active = false;
         trail.enabled = false;
     }
 
     private void OnHit()
     {
-        hurtbox.gameObject.SetActive(false);
+        hurtbox.active = false;
         PlayerController.HitEnemy();
     }
 }
