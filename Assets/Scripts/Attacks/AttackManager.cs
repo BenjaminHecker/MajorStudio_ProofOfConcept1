@@ -31,9 +31,25 @@ public class AttackManager : MonoBehaviour
         }
     }
 
+    [Header("Range Special")]
+    [SerializeField] private RangeSpecial rangeSpecial;
+    [SerializeField] private float rangeSpecialDelay;
+    [SerializeField] private float rangeSpecialCooldown;
+
+    private bool rangeSpecialOnCooldown = false;
+    public bool RangeSpecialReady
+    {
+        get
+        {
+            return !rangeSpecialOnCooldown && player.ringManager.CompleteRingsCount >= 2;
+        }
+    }
+
     public void Setup(PlayerController playerController)
     {
         player = playerController;
+
+        rangeSpecial.Setup(player);
     }
 
     public void SlashAttack()
@@ -73,7 +89,7 @@ public class AttackManager : MonoBehaviour
 
         while (dashTimer < dashDuration)
         {
-            if (player.character.localScale.x > 0)
+            if (player.FacingRight)
                 player.transform.position += Vector3.right * dashSpeed * Time.deltaTime;
             else
                 player.transform.position += Vector3.left * dashSpeed * Time.deltaTime;
@@ -85,6 +101,26 @@ public class AttackManager : MonoBehaviour
         yield return new WaitForSeconds(dashSpecialCooldown);
 
         dashSpecialOnCooldown = false;
+        player.freezeCharacterDirection = false;
+    }
+
+    public void RangeSpecial()
+    {
+        StartCoroutine(RangeSpecialRoutine());
+    }
+
+    private IEnumerator RangeSpecialRoutine()
+    {
+        rangeSpecialOnCooldown = true;
+        player.freezeCharacterDirection = true;
+
+        yield return new WaitForSeconds(rangeSpecialDelay);
+
+        rangeSpecial.Trigger();
+
+        yield return new WaitForSeconds(rangeSpecialCooldown);
+
+        rangeSpecialOnCooldown = false;
         player.freezeCharacterDirection = false;
     }
 }

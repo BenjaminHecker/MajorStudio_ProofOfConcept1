@@ -30,8 +30,10 @@ public class PlayerController : MonoBehaviour
     private bool grounded = true;
     private bool jump = false;
 
-    public bool freezeCharacterDirection = false;
-    public bool freezeMovementY = false;
+    public bool FacingRight { get { return character.localScale.x > 0; } }
+
+    [HideInInspector] public bool freezeCharacterDirection = false;
+    [HideInInspector] public bool freezeMovementY = false;
 
     [Header("Health")]
     [SerializeField] private float healthMax;
@@ -62,10 +64,15 @@ public class PlayerController : MonoBehaviour
             attackManager.SlashAttack();
         }
 
-        if (Input.GetKeyDown(KeyCode.C) && attackManager.DashSpecialReady)
+        if (Input.GetKeyDown(KeyCode.C) && (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && attackManager.DashSpecialReady)
         {
             attackManager.DashSpecial();
             ringManager.RemoveRings(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.C) && Input.GetKey(KeyCode.UpArrow) && attackManager.RangeSpecialReady)
+        {
+            attackManager.RangeSpecial();
         }
     }
 

@@ -24,9 +24,9 @@ public class RingManager : MonoBehaviour
     [SerializeField] private float emptyRingSpinSpeed = 1f;
     [SerializeField] private float completedRingSpinSpeed = 4f;
 
-    private List<RingMarker> firstRingMarkers = new List<RingMarker>();
-    private List<RingMarker> secondRingMarkers = new List<RingMarker>();
-    private List<RingMarker> thirdRingMarkers = new List<RingMarker>();
+    [HideInInspector] public List<RingMarker> firstRingMarkers = new List<RingMarker>();
+    [HideInInspector] public List<RingMarker> secondRingMarkers = new List<RingMarker>();
+    [HideInInspector] public List<RingMarker> thirdRingMarkers = new List<RingMarker>();
 
     private float firstRingAngle = 0f;
     private float secondRingAngle = 0f;
