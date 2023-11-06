@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
+  m_Name: TigerMoc3.fadeMotionList
+  m_EditorClassIdentifier: 
+  MotionInstanceIds: 7c7af1ff467af1ff1e7af1fff679f1ffce79f1ffa679f1fffa6df1ffd26df1ffaa6df1ff
+  CubismFadeMotionObjects:
+  - {fileID: 11400000, guid: 58e0c1d749702d04a95fc684484cc2db, type: 2}
+  - {fileID: 11400000, guid: 1a73b6034102de74994af5e6d162bfae, type: 2}
+  - {fileID: 11400000, guid: 4df87f1690e100147930132ce11b1a80, type: 2}
+  - {fileID: 11400000, guid: 52b392f4f69712349a797cdb9a822ee5, type: 2}
+  - {fileID: 11400000, guid: bd613d85f604a85418a6047c3268232b, type: 2}
+  - {fileID: 11400000, guid: 4d702c2ce149b0648ac250989e16ee09, type: 2}
+  - {fileID: 11400000, guid: debcfc4ffe347fa429ab1f614638027e, type: 2}
+  - {fileID: 11400000, guid: 170c70ad0a8249e4d8bc4dea9e0a6030, type: 2}
+  - {fileID: 11400000, guid: e746272ae71a3674c98453cdda1b3f94, type: 2}

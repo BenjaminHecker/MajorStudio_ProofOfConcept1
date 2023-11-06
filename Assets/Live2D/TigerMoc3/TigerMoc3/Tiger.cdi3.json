@@ -1,0 +1,394 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "ParamAngleX",
+			"GroupId": "",
+			"Name": "Angle X"
+		},
+		{
+			"Id": "ParamAngleX2",
+			"GroupId": "",
+			"Name": "Angle X"
+		},
+		{
+			"Id": "Param23",
+			"GroupId": "",
+			"Name": "keyframs"
+		},
+		{
+			"Id": "ParamAngleY",
+			"GroupId": "",
+			"Name": "Angle Y"
+		},
+		{
+			"Id": "ParamAngleY2",
+			"GroupId": "",
+			"Name": "leap"
+		},
+		{
+			"Id": "ParamAngleY3",
+			"GroupId": "",
+			"Name": "leap z"
+		},
+		{
+			"Id": "ParamAngleY4",
+			"GroupId": "",
+			"Name": "leap x"
+		},
+		{
+			"Id": "ParamAngleZ",
+			"GroupId": "",
+			"Name": "Angle Z"
+		},
+		{
+			"Id": "ParamAngleZ2",
+			"GroupId": "",
+			"Name": "lowerdown"
+		},
+		{
+			"Id": "ParamAngleZ3",
+			"GroupId": "",
+			"Name": "attackhand"
+		},
+		{
+			"Id": "ParamAngleZ6",
+			"GroupId": "",
+			"Name": "attack icon"
+		},
+		{
+			"Id": "ParamAngleZ7",
+			"GroupId": "",
+			"Name": "attack hand"
+		},
+		{
+			"Id": "ParamAngleZ8",
+			"GroupId": "",
+			"Name": "arm leap"
+		},
+		{
+			"Id": "ParamAngleZ4",
+			"GroupId": "",
+			"Name": "longer"
+		},
+		{
+			"Id": "ParamAngleZ5",
+			"GroupId": "",
+			"Name": "longer"
+		},
+		{
+			"Id": "ParamEyeLOpen",
+			"GroupId": "",
+			"Name": "EyeL Open"
+		},
+		{
+			"Id": "ParamEyeLSmile",
+			"GroupId": "",
+			"Name": "EyeL Smile"
+		},
+		{
+			"Id": "ParamEyeROpen",
+			"GroupId": "",
+			"Name": "EyeR Open"
+		},
+		{
+			"Id": "ParamMouthForm",
+			"GroupId": "",
+			"Name": "Mouth Form"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "",
+			"Name": "ear right"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "",
+			"Name": "ear left"
+		},
+		{
+			"Id": "ParamMouthOpenY",
+			"GroupId": "",
+			"Name": "Mouth Open"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "",
+			"Name": "roar"
+		},
+		{
+			"Id": "Param31",
+			"GroupId": "",
+			"Name": "roar"
+		},
+		{
+			"Id": "ParamCheek",
+			"GroupId": "",
+			"Name": "Cheek"
+		},
+		{
+			"Id": "ParamBodyAngleX",
+			"GroupId": "",
+			"Name": "Body X"
+		},
+		{
+			"Id": "ParamBodyAngleY",
+			"GroupId": "",
+			"Name": "Body Y"
+		},
+		{
+			"Id": "ParamBodyAngleZ",
+			"GroupId": "",
+			"Name": "Body Z"
+		},
+		{
+			"Id": "ParamBreath",
+			"GroupId": "",
+			"Name": "Breath"
+		},
+		{
+			"Id": "ParamHairFront",
+			"GroupId": "",
+			"Name": "Hair Move Front"
+		},
+		{
+			"Id": "ParamHairSide",
+			"GroupId": "",
+			"Name": "Hair Move Side"
+		},
+		{
+			"Id": "ParamHairBack",
+			"GroupId": "",
+			"Name": "Hair Move Back"
+		},
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "paw switch"
+		},
+		{
+			"Id": "Param17",
+			"GroupId": "",
+			"Name": "walk prep"
+		},
+		{
+			"Id": "Param13",
+			"GroupId": "",
+			"Name": "leg1"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "",
+			"Name": "leg1"
+		},
+		{
+			"Id": "Param27",
+			"GroupId": "",
+			"Name": "xigai"
+		},
+		{
+			"Id": "Param19",
+			"GroupId": "",
+			"Name": "leg1"
+		},
+		{
+			"Id": "Param18",
+			"GroupId": "",
+			"Name": "leg1updown"
+		},
+		{
+			"Id": "Param6",
+			"GroupId": "",
+			"Name": "leg2"
+		},
+		{
+			"Id": "Param14",
+			"GroupId": "",
+			"Name": "leg2"
+		},
+		{
+			"Id": "Param24",
+			"GroupId": "",
+			"Name": "leg2"
+		},
+		{
+			"Id": "Param28",
+			"GroupId": "",
+			"Name": "xigai"
+		},
+		{
+			"Id": "Param20",
+			"GroupId": "",
+			"Name": "leg2updown"
+		},
+		{
+			"Id": "Param7",
+			"GroupId": "",
+			"Name": "leg3"
+		},
+		{
+			"Id": "Param15",
+			"GroupId": "",
+			"Name": "leg3"
+		},
+		{
+			"Id": "Param26",
+			"GroupId": "",
+			"Name": "leg3"
+		},
+		{
+			"Id": "Param30",
+			"GroupId": "",
+			"Name": "xigai"
+		},
+		{
+			"Id": "Param21",
+			"GroupId": "",
+			"Name": "leg3updown"
+		},
+		{
+			"Id": "Param8",
+			"GroupId": "",
+			"Name": "leg4"
+		},
+		{
+			"Id": "Param16",
+			"GroupId": "",
+			"Name": "leg4"
+		},
+		{
+			"Id": "Param25",
+			"GroupId": "",
+			"Name": "leg4"
+		},
+		{
+			"Id": "Param29",
+			"GroupId": "",
+			"Name": "xigai"
+		},
+		{
+			"Id": "Param22",
+			"GroupId": "",
+			"Name": "leg4updown"
+		},
+		{
+			"Id": "Param10",
+			"GroupId": "",
+			"Name": "tail wiggle"
+		},
+		{
+			"Id": "Param9",
+			"GroupId": "",
+			"Name": "tail1"
+		},
+		{
+			"Id": "Param11",
+			"GroupId": "",
+			"Name": "tail2"
+		},
+		{
+			"Id": "Param12",
+			"GroupId": "",
+			"Name": "tail3"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "Part18",
+			"Name": "tiger more'.psd"
+		},
+		{
+			"Id": "Part17",
+			"Name": "tile016.png"
+		},
+		{
+			"Id": "Part16",
+			"Name": "tile014.png"
+		},
+		{
+			"Id": "Part15",
+			"Name": "tile013.png"
+		},
+		{
+			"Id": "Part14",
+			"Name": "tile012.png"
+		},
+		{
+			"Id": "Part13",
+			"Name": "tile008.png"
+		},
+		{
+			"Id": "Part12",
+			"Name": "tile003.png"
+		},
+		{
+			"Id": "Part11",
+			"Name": "tile002.png"
+		},
+		{
+			"Id": "Part10",
+			"Name": "tile000.png"
+		},
+		{
+			"Id": "Part",
+			"Name": "alternate attack parts"
+		},
+		{
+			"Id": "Part2",
+			"Name": "live2d tiger"
+		},
+		{
+			"Id": "Part9",
+			"Name": "sketch materials"
+		},
+		{
+			"Id": "claw",
+			"Name": "claw"
+		},
+		{
+			"Id": "head",
+			"Name": "head"
+		},
+		{
+			"Id": "Part5",
+			"Name": "top front leg"
+		},
+		{
+			"Id": "Part6",
+			"Name": "top back leg"
+		},
+		{
+			"Id": "Part7",
+			"Name": "back front leg"
+		},
+		{
+			"Id": "tail",
+			"Name": "tail"
+		},
+		{
+			"Id": "Part8",
+			"Name": "back back leg"
+		},
+		{
+			"Id": "Part3",
+			"Name": "front ear"
+		},
+		{
+			"Id": "eye",
+			"Name": "eye"
+		},
+		{
+			"Id": "mouth",
+			"Name": "mouth"
+		},
+		{
+			"Id": "mouth2",
+			"Name": "mouth"
+		},
+		{
+			"Id": "Part4",
+			"Name": "back ear"
+		}
+	]
+}
