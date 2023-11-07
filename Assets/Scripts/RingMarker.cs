@@ -16,5 +16,7 @@ public class RingMarker : MonoBehaviour
         pos.y = radius * Mathf.Sin(ringAngle + angleOffset);
 
         transform.localPosition = pos;
+
+        transform.up = transform.localPosition;
     }
 }

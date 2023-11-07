@@ -5,10 +5,16 @@ using UnityEngine;
 public class RingManager : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private RingMarker ringMarkerPrefab;
+    [SerializeField] private SpriteRenderer baseRing;
     [SerializeField] private SpriteRenderer firstRing;
     [SerializeField] private SpriteRenderer secondRing;
     [SerializeField] private SpriteRenderer thirdRing;
+
+    [Space]
+    [SerializeField] private RingMarker ringMarkerBasePrefab;
+    [SerializeField] private RingMarker ringMarker1Prefab;
+    [SerializeField] private RingMarker ringMarker2Prefab;
+    [SerializeField] private RingMarker ringMarker3Prefab;
 
     [Space]
     [SerializeField] private int firstRingCapacity = 3;
@@ -19,6 +25,10 @@ public class RingManager : MonoBehaviour
     [SerializeField] private float firstRingRadius;
     [SerializeField] private float secondRingRadius;
     [SerializeField] private float thirdRingRadius;
+
+    [Space]
+    [SerializeField] private Color emptyRingColor;
+    [SerializeField] private Color completedRingColor;
 
     [Space]
     [SerializeField] private float emptyRingSpinSpeed = 1f;
@@ -47,17 +57,16 @@ public class RingManager : MonoBehaviour
 
     public void Update()
     {
-        Color newFirstRingColor = firstRing.color;
-        newFirstRingColor.a = Mathf.InverseLerp(0f, firstRingCapacity, firstRingMarkers.Count);
-        firstRing.color = newFirstRingColor;
+        float firstRingRatio = Mathf.InverseLerp(0f, firstRingCapacity, firstRingMarkers.Count);
+        float secondRingRatio = Mathf.InverseLerp(0f, secondRingCapacity, secondRingMarkers.Count);
+        float thirdRingRatio = Mathf.InverseLerp(0f, thirdRingCapacity, thirdRingMarkers.Count);
 
-        Color newSecondRingColor = secondRing.color;
-        newSecondRingColor.a = Mathf.InverseLerp(0f, secondRingCapacity, secondRingMarkers.Count);
-        secondRing.color = newSecondRingColor;
+        baseRing.color = Color.Lerp(emptyRingColor, completedRingColor, firstRingRatio);
+        firstRing.color = baseRing.color;
 
-        Color newThirdRingColor = thirdRing.color;
-        newThirdRingColor.a = Mathf.InverseLerp(0f, thirdRingCapacity, thirdRingMarkers.Count);
-        thirdRing.color = newThirdRingColor;
+        secondRing.color = Color.Lerp(emptyRingColor, completedRingColor, secondRingRatio);
+        thirdRing.color = Color.Lerp(emptyRingColor, completedRingColor, thirdRingRatio);
+
         
         if (FirstRingComplete)
         {
@@ -131,7 +140,7 @@ public class RingManager : MonoBehaviour
             {
                 if (!ThirdRingComplete)
                 {
-                    RingMarker newMarker = Instantiate(ringMarkerPrefab, thirdRing.transform);
+                    RingMarker newMarker = Instantiate(ringMarker3Prefab, thirdRing.transform);
                     thirdRingMarkers.Add(newMarker);
 
                     newMarker.radius = thirdRingRadius;
@@ -141,7 +150,7 @@ public class RingManager : MonoBehaviour
             }
             else
             {
-                RingMarker newMarker = Instantiate(ringMarkerPrefab, secondRing.transform);
+                RingMarker newMarker = Instantiate(ringMarker2Prefab, secondRing.transform);
                 secondRingMarkers.Add(newMarker);
 
                 newMarker.radius = secondRingRadius;
@@ -151,7 +160,7 @@ public class RingManager : MonoBehaviour
         }
         else
         {
-            RingMarker newMarker = Instantiate(ringMarkerPrefab, firstRing.transform);
+            RingMarker newMarker = Instantiate(ringMarker1Prefab, firstRing.transform);
             firstRingMarkers.Add(newMarker);
 
             newMarker.radius = firstRingRadius;

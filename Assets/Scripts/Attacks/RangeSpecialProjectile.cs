@@ -67,12 +67,14 @@ public class RangeSpecialProjectile : MonoBehaviour
         windingUp = true;
 
         Vector3 startPos = transform.position;
+        Vector3 startRot = transform.up;
 
         while (windUpTimer < windUpDuration)
         {
             float curvedRatio = windUpMoveCurve.Evaluate(windUpTimer / windUpDuration);
 
             transform.position = Vector3.Lerp(startPos, windUpTarget, curvedRatio);
+            transform.up = Vector3.Lerp(startRot, launchTarget - windUpTarget, curvedRatio);
 
             windUpTimer += Time.deltaTime;
             yield return new WaitForEndOfFrame();
