@@ -39,9 +39,11 @@ public class PlayerController : MonoBehaviour
 
     [Header("Health")]
     [SerializeField] private float healthMax;
-    [SerializeField] private float healAmount;
+    [SerializeField] private float healDelay;
+    [SerializeField] private float healSpeed;
 
     private float health;
+    private float healTimer = 0f;
 
     private void Awake()
     {
@@ -56,6 +58,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        UpdateHeal();
+        UpdateHealth();
+
         CheckGrounded();
         HandleHorizontalMovement();
         HandleJump();
@@ -163,26 +168,30 @@ public class PlayerController : MonoBehaviour
         return vector.magnitude * snappedVector;
     }
 
-    public static void HitEnemy()
-    {
-        instance.ringManager.AddRingMarker();
-
-        instance.health = Mathf.Clamp(instance.health + instance.healAmount, 0f, instance.healthMax);
-        instance.UpdateHealth();
-    }
-
-    public void Damage(Vector3 source, float amount)
-    {
-        ringManager.ResetOuterRing();
-
-        health = Mathf.Clamp(health - amount, 0f, healthMax);
-        UpdateHealth();
-
-        rb.velocity += (transform.position - source) * Vector2.right * 5f;
-    }
-
     private void UpdateHealth()
     {
         healthBar.SetHealth(Mathf.InverseLerp(0f, healthMax, health));
+    }
+
+    public static void AddRingMarker()
+    {
+        instance.ringManager.AddRingMarker();
+    }
+
+    public static void TakeDamage(float amount)
+    {
+        instance.ringManager.ResetOuterRing();
+
+        instance.healTimer = 0f;
+
+        instance.health = Mathf.Clamp(instance.health - amount, 0f, instance.healthMax);
+        instance.UpdateHealth();
+    }
+    private void UpdateHeal()
+    {
+        healTimer += Time.deltaTime;
+
+        if (healTimer >= healDelay)
+            health = Mathf.Clamp(health + healSpeed * Time.deltaTime, 0f, healthMax);
     }
 }

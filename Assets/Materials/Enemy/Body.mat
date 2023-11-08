@@ -95,5 +95,5 @@ Material:
     - _3_Color_To_Replace: {r: 0, g: 0, b: 0, a: 0}
     - _4_Color_To_Replace: {r: 0, g: 0, b: 0, a: 0}
     - _5_Color_To_Replace: {r: 0, g: 0, b: 0, a: 0}
-    - _Offset: {r: 0.27116546, g: 0.12935254, b: 0, a: 0}
+    - _Offset: {r: 0.49852666, g: 0.12935254, b: 0, a: 0}
   m_BuildTextureStacks: []

@@ -20,12 +20,14 @@ public class RangeSpecialProjectile : MonoBehaviour
 
     private bool windingUp = false;
 
+    private float damage;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void Setup(PlayerController player, Vector3 enemyPos, float launchTime)
+    public void Setup(PlayerController player, Vector3 enemyPos, float launchTime, float damage)
     {
         Vector3 offset = windUpOffset;
 
@@ -36,6 +38,7 @@ public class RangeSpecialProjectile : MonoBehaviour
         launchTarget = enemyPos;
 
         this.launchTime = launchTime;
+        this.damage = damage;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,7 +47,8 @@ public class RangeSpecialProjectile : MonoBehaviour
 
         if (collision.CompareTag("Enemy"))
         {
-            // deal damage to enemy
+            PlayerController.AddRingMarker();
+            EnemyController.TakeDamage(damage);
             Destroy(gameObject);
         }
 

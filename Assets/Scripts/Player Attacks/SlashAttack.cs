@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class SlashAttack : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private Hurtbox hurtbox;
     [SerializeField] private TrailRenderer trail;
 
     private Animator anim;
+
+    [Header("Config")]
+    [SerializeField] private float damage;
 
     private void Awake()
     {
@@ -45,6 +49,7 @@ public class SlashAttack : MonoBehaviour
     private void OnHit()
     {
         hurtbox.active = false;
-        PlayerController.HitEnemy();
+        PlayerController.AddRingMarker();
+        EnemyController.TakeDamage(damage);
     }
 }

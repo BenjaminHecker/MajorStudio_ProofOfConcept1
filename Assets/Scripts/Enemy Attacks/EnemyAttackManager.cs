@@ -7,22 +7,32 @@ public class EnemyAttackManager : MonoBehaviour
     private EnemyController enemy;
 
     [Header("Swipe")]
+    [SerializeField] private EnemySwipeAttack swipeAttack;
+
+    [Space]
     [SerializeField] private float runStartDelay;
     [SerializeField] private float runMoveSpeed;
     [SerializeField] private float runEndDelay;
 
     [Space]
     [SerializeField] private float swipeDelay;
-    [SerializeField] private float swipeDuration;
+    [SerializeField] private float firstSwipeDuration;
+    [SerializeField] private float secondSwipeDuration;
     [SerializeField] private float swipeDistance;
 
     [Header("Leap")]
+    [SerializeField] private EnemyLeapAttack leapAttack;
+
+    [Space]
     [SerializeField] private float leapDelay;
     [SerializeField] private float leapDuration;
     [SerializeField] private float leapSpeed;
     [SerializeField] private float leapHorizontalMax;
 
     [Header("Roar")]
+    [SerializeField] private EnemyRoarAttack roarAttack;
+
+    [Space]
     [SerializeField] private float roarDelay;
     [SerializeField] private float roarDuration;
 
@@ -65,9 +75,11 @@ public class EnemyAttackManager : MonoBehaviour
 
         yield return new WaitForSeconds(swipeDelay);
 
-        // trigger SwipeAttack
-
-        yield return new WaitForSeconds(swipeDuration);
+        swipeAttack.StartAttack();
+        yield return new WaitForSeconds(firstSwipeDuration);
+        swipeAttack.StartAttack();
+        yield return new WaitForSeconds(secondSwipeDuration);
+        swipeAttack.EndAttack();
 
         enemy.Idle();
     }
@@ -87,14 +99,24 @@ public class EnemyAttackManager : MonoBehaviour
 
         enemy.rb.velocity += Vector2.up * leapSpeed;
 
+        bool activatedHurtbox = false;
+
         for (float leapTimer = 0f; leapTimer < leapDuration; leapTimer += Time.deltaTime)
         {
             Vector3 pos = EnemyController.Position;
             pos.x = Mathf.Lerp(initialX, targetX, leapTimer / leapDuration);
             enemy.transform.position = pos;
 
+            if (leapTimer / leapDuration >= 0.5f && !activatedHurtbox)
+            {
+                leapAttack.StartAttack();
+                activatedHurtbox = true;
+            }
+
             yield return new WaitForEndOfFrame();
         }
+
+        leapAttack.EndAttack();
 
         enemy.Idle();
     }

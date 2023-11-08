@@ -13,6 +13,9 @@ public class RangeSpecial : MonoBehaviour
     [SerializeField] private float spawnTick;
     [SerializeField] private float launchDelay = 1f;
 
+    [Space]
+    [SerializeField] private float damage;
+
     public void Setup(PlayerController player)
     {
         this.player = player;
@@ -39,7 +42,7 @@ public class RangeSpecial : MonoBehaviour
 
                 RangeSpecialProjectile projectile = Instantiate(projectilePrefab, marker.transform.position, marker.transform.rotation);
                 projectile.transform.localScale = marker.transform.lossyScale;
-                projectile.Setup(player, EnemyController.Position, launchTime);
+                projectile.Setup(player, EnemyController.Position, launchTime, damage);
                 projectile.Trigger();
 
                 player.ringManager.firstRingMarkers.RemoveAt(0);
@@ -60,7 +63,7 @@ public class RangeSpecial : MonoBehaviour
 
                 RangeSpecialProjectile projectile = Instantiate(projectilePrefab, marker.transform.position, marker.transform.rotation);
                 projectile.transform.localScale = marker.transform.lossyScale;
-                projectile.Setup(player, EnemyController.Position, launchTime);
+                projectile.Setup(player, EnemyController.Position, launchTime, damage);
                 projectile.Trigger();
 
                 player.ringManager.secondRingMarkers.RemoveAt(0);
@@ -81,7 +84,7 @@ public class RangeSpecial : MonoBehaviour
 
                 RangeSpecialProjectile projectile = Instantiate(projectilePrefab, marker.transform.position, marker.transform.rotation);
                 projectile.transform.localScale = marker.transform.lossyScale;
-                projectile.Setup(player, EnemyController.Position, launchTime);
+                projectile.Setup(player, EnemyController.Position, launchTime, damage);
                 projectile.Trigger();
 
                 player.ringManager.thirdRingMarkers.RemoveAt(0);

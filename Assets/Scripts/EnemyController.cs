@@ -33,8 +33,7 @@ public class EnemyController : MonoBehaviour
 
     [Header("Health")]
     [SerializeField] private float healthMax;
-
-    private float health;
+    [SerializeField] private float health;
 
     private void Awake()
     {
@@ -112,5 +111,7 @@ public class EnemyController : MonoBehaviour
     public static void TakeDamage(float amount)
     {
         instance.health = Mathf.Clamp(instance.health - amount, 0f, instance.healthMax);
+
+        instance.anim.SetTrigger("Hurt");
     }
 }

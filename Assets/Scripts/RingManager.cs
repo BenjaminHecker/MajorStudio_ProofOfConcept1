@@ -171,19 +171,19 @@ public class RingManager : MonoBehaviour
 
     public void ResetOuterRing()
     {
-        if (ThirdRingComplete)
+        if (thirdRingMarkers.Count > 0)
         {
             foreach (RingMarker marker in thirdRingMarkers)
                 Destroy(marker.gameObject);
             thirdRingMarkers.Clear();
         }
-        else if (SecondRingComplete)
+        else if (secondRingMarkers.Count > 0)
         {
             foreach (RingMarker marker in secondRingMarkers)
                 Destroy(marker.gameObject);
             secondRingMarkers.Clear();
         }
-        else if (FirstRingComplete)
+        else if (firstRingMarkers.Count > 0)
         {
             foreach (RingMarker marker in firstRingMarkers)
                 Destroy(marker.gameObject);
