@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     private static PlayerController instance;
 
+    public static Vector3 Position { get { return instance.transform.position; } }
+
     [Header("References")]
     [SerializeField] private Animator anim;
     [SerializeField] public Transform character;
