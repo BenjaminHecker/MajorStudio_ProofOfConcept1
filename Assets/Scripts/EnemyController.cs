@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private static EnemyController instance;
 
-    // Update is called once per frame
-    void Update()
+    public static Vector3 Position { get { return instance.transform.position; } }
+
+    private void Awake()
     {
-        
+        instance = this;
     }
 }

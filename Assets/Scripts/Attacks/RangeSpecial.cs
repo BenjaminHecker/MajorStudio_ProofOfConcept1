@@ -39,7 +39,7 @@ public class RangeSpecial : MonoBehaviour
 
                 RangeSpecialProjectile projectile = Instantiate(projectilePrefab, marker.transform.position, marker.transform.rotation);
                 projectile.transform.localScale = marker.transform.lossyScale;
-                projectile.Setup(player, TestEnemy.instance.transform.position, launchTime);
+                projectile.Setup(player, EnemyController.Position, launchTime);
                 projectile.Trigger();
 
                 player.ringManager.firstRingMarkers.RemoveAt(0);
@@ -60,7 +60,7 @@ public class RangeSpecial : MonoBehaviour
 
                 RangeSpecialProjectile projectile = Instantiate(projectilePrefab, marker.transform.position, marker.transform.rotation);
                 projectile.transform.localScale = marker.transform.lossyScale;
-                projectile.Setup(player, TestEnemy.instance.transform.position, launchTime);
+                projectile.Setup(player, EnemyController.Position, launchTime);
                 projectile.Trigger();
 
                 player.ringManager.secondRingMarkers.RemoveAt(0);
@@ -81,7 +81,7 @@ public class RangeSpecial : MonoBehaviour
 
                 RangeSpecialProjectile projectile = Instantiate(projectilePrefab, marker.transform.position, marker.transform.rotation);
                 projectile.transform.localScale = marker.transform.lossyScale;
-                projectile.Setup(player, TestEnemy.instance.transform.position, launchTime);
+                projectile.Setup(player, EnemyController.Position, launchTime);
                 projectile.Trigger();
 
                 player.ringManager.thirdRingMarkers.RemoveAt(0);

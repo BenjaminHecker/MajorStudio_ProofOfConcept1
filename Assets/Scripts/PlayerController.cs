@@ -73,13 +73,9 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C) && Input.GetKey(KeyCode.UpArrow) && attackManager.RangeSpecialReady)
         {
+            anim.SetTrigger("Range Special");
             attackManager.RangeSpecial();
         }
-
-
-        if (Input.GetKeyDown(KeyCode.Alpha2)) anim.SetTrigger("Attack 2");
-        if (Input.GetKeyDown(KeyCode.Alpha3)) anim.SetTrigger("Attack 3");
-        if (Input.GetKeyDown(KeyCode.Alpha4)) anim.SetTrigger("Summon");
     }
 
     private void FixedUpdate()
