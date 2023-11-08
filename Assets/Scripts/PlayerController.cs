@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C) && (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && attackManager.DashSpecialReady)
         {
+            anim.SetTrigger("Dash");
             attackManager.DashSpecial();
             ringManager.RemoveRings(1);
         }
@@ -74,6 +75,11 @@ public class PlayerController : MonoBehaviour
         {
             attackManager.RangeSpecial();
         }
+
+
+        if (Input.GetKeyDown(KeyCode.Alpha2)) anim.SetTrigger("Attack 2");
+        if (Input.GetKeyDown(KeyCode.Alpha3)) anim.SetTrigger("Attack 3");
+        if (Input.GetKeyDown(KeyCode.Alpha4)) anim.SetTrigger("Summon");
     }
 
     private void FixedUpdate()
@@ -82,6 +88,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity += Vector2.up * Mathf.Sqrt(-2f * jumpHeight * gravityRise * Physics2D.gravity.y);
             jump = false;
+            anim.SetBool("isAirborne", true);
             anim.SetTrigger("Jump");
         }
 
@@ -107,7 +114,7 @@ public class PlayerController : MonoBehaviour
         grounded = hit.collider != null;
 
         if (grounded && !prevGrounded)
-            anim.SetTrigger("Land");
+            anim.SetBool("isAirborne", false);
     }
 
     private void HandleHorizontalMovement()
