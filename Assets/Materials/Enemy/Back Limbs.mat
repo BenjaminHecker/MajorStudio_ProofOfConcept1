@@ -53,7 +53,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture:
-        m_Texture: {fileID: 2800000, guid: 03e74e4d26f3fc8499f1cf9d139ffc4f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 416ef7d0041621543a10cf9769c64069, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture_1:
@@ -88,7 +88,7 @@ Material:
     m_Floats:
     - _1_Fuzziness: 0
     - _1_Range: 0.06
-    - _1_Scale: 0.15
+    - _1_Scale: 0.25
     - _2_Fuzziness: 0
     - _2_Range: 0
     - _2_Scale: 1
@@ -111,6 +111,6 @@ Material:
     - _5_Color_To_Replace: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _Offset: {r: 0.753027, g: 0.5174104, b: 0, a: 0}
+    - _Offset: {r: 0.27116546, g: 0.12935254, b: 0, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

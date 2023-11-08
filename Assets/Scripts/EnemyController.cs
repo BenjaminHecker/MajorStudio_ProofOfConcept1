@@ -19,9 +19,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float idleTime;
 
     [Space]
-    [SerializeField] private float walkStartDelay;
+    [SerializeField] private float walkDelay;
     [SerializeField] private float walkDuration;
-    [SerializeField] private float walkEndDelay;
     [SerializeField] private float walkMoveSpeed;
 
     [Space]
@@ -84,7 +83,7 @@ public class EnemyController : MonoBehaviour
     {
         anim.SetBool("Walking", true);
 
-        yield return new WaitForSeconds(walkStartDelay);
+        yield return new WaitForSeconds(walkDelay);
 
         for (float walkTimer = 0f; walkTimer < walkDuration; walkTimer += Time.deltaTime)
         {
@@ -95,17 +94,10 @@ public class EnemyController : MonoBehaviour
 
         anim.SetBool("Walking", false);
 
-        for (float walkTimer = 0f; walkTimer < walkEndDelay; walkTimer += Time.deltaTime)
-        {
-            transform.position += (FacingRight ? Vector3.right : Vector3.left) * walkMoveSpeed * Time.deltaTime;
-
-            yield return new WaitForEndOfFrame();
-        }
-
         Idle();
     }
 
-    private void UpdateFaceDirection()
+    public void UpdateFaceDirection()
     {
         Vector3 characterScale = character.localScale;
 
