@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    private static EnemyController instance;
+    public static EnemyController instance;
 
     public static Vector3 Position { get { return instance.transform.position; } }
 
@@ -117,5 +117,7 @@ public class EnemyController : MonoBehaviour
         instance.anim.SetTrigger("Hurt");
 
         SoundManager.PlayMiscWithPitch("Enemy Hurt", Random.Range(0.5f, 1.5f));
+
+        if (instance.health <= 0f) GameManager.Victory();
     }
 }

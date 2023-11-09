@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private static PlayerController instance;
+    public static PlayerController instance;
 
     public static Vector3 Position { get { return instance.transform.position; } }
 
@@ -187,6 +187,8 @@ public class PlayerController : MonoBehaviour
         instance.UpdateHealth();
 
         SoundManager.PlayMisc("Player Hurt");
+
+        if (instance.health <= 0f) GameManager.Failure();
     }
     private void UpdateHeal()
     {
