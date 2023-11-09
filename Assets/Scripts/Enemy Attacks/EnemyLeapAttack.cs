@@ -35,6 +35,6 @@ public class EnemyLeapAttack : MonoBehaviour
 
         Vector3 particleSpawnPos = Vector2.Lerp(EnemyController.Position, PlayerController.Position, 0.8f) + Random.insideUnitCircle;
         ParticleSystem particles = Instantiate(hitParticles, particleSpawnPos, Quaternion.identity);
-        Destroy(particles, particles.main.startLifetimeMultiplier);
+        Destroy(particles, 1f);
     }
 }

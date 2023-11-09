@@ -43,7 +43,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float healSpeed;
 
     private float health;
-    private float healTimer = 0f;
 
     private void Awake()
     {
@@ -93,6 +92,8 @@ public class PlayerController : MonoBehaviour
             jump = false;
             anim.SetBool("isAirborne", true);
             anim.SetTrigger("Jump");
+
+            SoundManager.PlayMisc("Player Jump");
         }
 
         if (freezeMovementY)
@@ -182,16 +183,14 @@ public class PlayerController : MonoBehaviour
     {
         instance.ringManager.ResetOuterRing();
 
-        instance.healTimer = 0f;
-
         instance.health = Mathf.Clamp(instance.health - amount, 0f, instance.healthMax);
         instance.UpdateHealth();
+
+        SoundManager.PlayMisc("Player Hurt");
     }
     private void UpdateHeal()
     {
-        healTimer += Time.deltaTime;
-
-        if (healTimer >= healDelay)
+        if (ringManager.CompleteRingsCount > 0)
             health = Mathf.Clamp(health + healSpeed * Time.deltaTime, 0f, healthMax);
     }
 }

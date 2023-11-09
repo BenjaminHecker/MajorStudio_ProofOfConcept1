@@ -47,6 +47,8 @@ public class EnemyController : MonoBehaviour
     private void Start()
     {
         Idle();
+
+        SoundManager.PlayMisc("Enemy Ambient");
     }
 
     public void Idle() { StartCoroutine(IdleRoutine()); }
@@ -113,5 +115,7 @@ public class EnemyController : MonoBehaviour
         instance.health = Mathf.Clamp(instance.health - amount, 0f, instance.healthMax);
 
         instance.anim.SetTrigger("Hurt");
+
+        SoundManager.PlayMiscWithPitch("Enemy Hurt", Random.Range(0.5f, 1.5f));
     }
 }

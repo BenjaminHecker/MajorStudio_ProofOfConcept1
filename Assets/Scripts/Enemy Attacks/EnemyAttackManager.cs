@@ -73,6 +73,8 @@ public class EnemyAttackManager : MonoBehaviour
 
         enemy.anim.SetTrigger("Swipe");
 
+        SoundManager.PlayMisc("Enemy Swipe Attack");
+
         yield return new WaitForSeconds(swipeDelay);
 
         swipeAttack.StartAttack();
@@ -94,6 +96,8 @@ public class EnemyAttackManager : MonoBehaviour
             targetX = initialX + (enemy.FacingRight ? 1 : -1) * leapHorizontalMax;
 
         enemy.anim.SetTrigger("Leap");
+
+        SoundManager.PlayMisc("Enemy Leap");
 
         yield return new WaitForSeconds(leapDelay);
 

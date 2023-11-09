@@ -85,6 +85,8 @@ public class AttackManager : MonoBehaviour
 
         yield return new WaitForSeconds(dashSpecialDelay);
 
+        SoundManager.PlayMisc("Player Dash");
+
         float dashTimer = 0f;
 
         while (dashTimer < dashDuration)
@@ -115,6 +117,8 @@ public class AttackManager : MonoBehaviour
         player.freezeCharacterDirection = true;
 
         yield return new WaitForSeconds(rangeSpecialDelay);
+
+        SoundManager.PlayMisc("Player Range Special");
 
         rangeSpecial.Trigger();
 

@@ -146,6 +146,8 @@ public class RingManager : MonoBehaviour
                     newMarker.radius = thirdRingRadius;
                     newMarker.angleOffset = (float) thirdRingMarkers.Count / thirdRingCapacity * 2f * Mathf.PI;
                     newMarker.UpdateMarker(thirdRingAngle);
+
+                    SoundManager.PlayMiscWithPitch("Chime 3", Mathf.Lerp(1.5f, 3f, (float)thirdRingMarkers.Count / thirdRingCapacity));
                 }
             }
             else
@@ -156,6 +158,8 @@ public class RingManager : MonoBehaviour
                 newMarker.radius = secondRingRadius;
                 newMarker.angleOffset = (float) secondRingMarkers.Count / secondRingCapacity * 2f * Mathf.PI;
                 newMarker.UpdateMarker(secondRingAngle);
+
+                SoundManager.PlayMiscWithPitch("Chime 3", Mathf.Lerp(1f, 2.5f, (float)secondRingMarkers.Count / secondRingCapacity));
             }
         }
         else
@@ -166,6 +170,8 @@ public class RingManager : MonoBehaviour
             newMarker.radius = firstRingRadius;
             newMarker.angleOffset = (float) firstRingMarkers.Count / firstRingCapacity * 2f * Mathf.PI;
             newMarker.UpdateMarker(firstRingAngle);
+
+            SoundManager.PlayMiscWithPitch("Chime 3", Mathf.Lerp(0.5f, 2f, (float)firstRingMarkers.Count / firstRingCapacity));
         }
     }
 

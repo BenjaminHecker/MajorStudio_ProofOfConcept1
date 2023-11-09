@@ -34,15 +34,13 @@ public class RangeSpecial : MonoBehaviour
         {
             ringCounter++;
 
-            float launchTime = Time.time + launchDelay;
-
             while (player.ringManager.firstRingMarkers.Count > 0)
             {
                 RingMarker marker = player.ringManager.firstRingMarkers[0];
 
                 RangeSpecialProjectile projectile = Instantiate(projectilePrefab, marker.transform.position, marker.transform.rotation);
                 projectile.transform.localScale = marker.transform.lossyScale;
-                projectile.Setup(player, EnemyController.Position, launchTime, damage);
+                projectile.Setup(player, EnemyController.Position, Time.time + launchDelay, damage);
                 projectile.Trigger();
 
                 player.ringManager.firstRingMarkers.RemoveAt(0);
@@ -55,15 +53,13 @@ public class RangeSpecial : MonoBehaviour
         {
             ringCounter++;
 
-            float launchTime = Time.time + launchDelay;
-
             while (player.ringManager.secondRingMarkers.Count > 0)
             {
                 RingMarker marker = player.ringManager.secondRingMarkers[0];
 
                 RangeSpecialProjectile projectile = Instantiate(projectilePrefab, marker.transform.position, marker.transform.rotation);
                 projectile.transform.localScale = marker.transform.lossyScale;
-                projectile.Setup(player, EnemyController.Position, launchTime, damage);
+                projectile.Setup(player, EnemyController.Position, Time.time + launchDelay, damage);
                 projectile.Trigger();
 
                 player.ringManager.secondRingMarkers.RemoveAt(0);
@@ -76,15 +72,13 @@ public class RangeSpecial : MonoBehaviour
         {
             ringCounter++;
 
-            float launchTime = Time.time + launchDelay;
-
             while (player.ringManager.thirdRingMarkers.Count > 0)
             {
                 RingMarker marker = player.ringManager.thirdRingMarkers[0];
 
                 RangeSpecialProjectile projectile = Instantiate(projectilePrefab, marker.transform.position, marker.transform.rotation);
                 projectile.transform.localScale = marker.transform.lossyScale;
-                projectile.Setup(player, EnemyController.Position, launchTime, damage);
+                projectile.Setup(player, EnemyController.Position, Time.time + launchDelay, damage);
                 projectile.Trigger();
 
                 player.ringManager.thirdRingMarkers.RemoveAt(0);

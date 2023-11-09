@@ -55,6 +55,6 @@ public class SlashAttack : MonoBehaviour
 
         Vector3 particleSpawnPos = Vector2.Lerp(trail.transform.position, EnemyController.Position, 0.5f) + Random.insideUnitCircle;
         ParticleSystem particles = Instantiate(hitParticles, particleSpawnPos, Quaternion.identity);
-        Destroy(particles, particles.main.startLifetimeMultiplier);
+        Destroy(particles, 1f);
     }
 }

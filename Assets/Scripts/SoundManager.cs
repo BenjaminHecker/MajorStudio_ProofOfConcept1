@@ -115,10 +115,29 @@ public class SoundManager : MonoBehaviour
         Debug.LogWarning("Sound " + name + " not found");
     }
 
-    public static void PlayRandomKeySound()
+    //public static void PlayRandomChimeSound()
+    //{
+    //    int randKeyIndex = Random.Range(0, 7);
+    //    PlayMisc(instance.sounds[randKeyIndex].name);
+    //}
+
+    public static void PlayMiscWithPitch(string name, float pitch)
     {
-        int randKeyIndex = Random.Range(0, 1);
-        PlayMisc(instance.sounds[randKeyIndex].name);
+        foreach (Sound s in instance.sounds)
+        {
+            if (s.name == name)
+            {
+                s.source.pitch = pitch;
+
+                if (s.stack)
+                    s.source.PlayOneShot(s.clip);
+                else
+                    s.source.Play();
+
+                return;
+            }
+        }
+        Debug.LogWarning("Sound " + name + " not found");
     }
 
     public static void VolumeMisc(string name, float volume)
