@@ -111,6 +111,6 @@ Material:
     - _5_Color_To_Replace: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _Offset: {r: 0.14432307, g: 0.12935254, b: 0, a: 0}
+    - _Offset: {r: 1.0363797, g: 0.12936914, b: 0, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

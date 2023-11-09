@@ -28,9 +28,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundCastDistance = 0.2f;
     [SerializeField] private LayerMask groundLayer;
 
-    private Vector2 move;
-    private bool grounded = true;
-    private bool jump = false;
+    [HideInInspector] private Vector2 move;
+    [HideInInspector] public bool grounded = true;
+    [HideInInspector] private bool jump = false;
 
     public bool FacingRight { get { return character.localScale.x > 0; } }
 

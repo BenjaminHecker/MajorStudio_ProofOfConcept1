@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -8,6 +9,14 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
 
     [SerializeField] private Animator titleCards;
+
+    [Header("Controls UI")]
+    [SerializeField] private Color disabledColor;
+    [SerializeField] private Color enabledColor;
+    [SerializeField] private Image jumpImg;
+    [SerializeField] private Image slashImg;
+    [SerializeField] private Image dashImg;
+    [SerializeField] private Image rangeImg;
 
     private bool gameOver = false;
 
@@ -21,6 +30,11 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(0);
+
+        UpdateJumpUI(PlayerController.instance.grounded);
+        UpdateSlashUI(PlayerController.instance.attackManager.SlashAttackReady);
+        UpdateDashUI(PlayerController.instance.attackManager.DashSpecialReady);
+        UpdateRangeUI(PlayerController.instance.attackManager.RangeSpecialReady);
     }
 
     public static void Victory()
@@ -43,5 +57,25 @@ public class GameManager : MonoBehaviour
             instance.titleCards.SetTrigger("Failure");
             SoundManager.PlayMusic("Failure");
         }
+    }
+
+    private void UpdateJumpUI(bool enabled)
+    {
+        jumpImg.color = enabled ? enabledColor : disabledColor;
+    }
+
+    private void UpdateSlashUI(bool enabled)
+    {
+        slashImg.color = enabled ? enabledColor : disabledColor;
+    }
+
+    private void UpdateDashUI(bool enabled)
+    {
+        dashImg.color = enabled ? enabledColor : disabledColor;
+    }
+
+    private void UpdateRangeUI(bool enabled)
+    {
+        rangeImg.color = enabled ? enabledColor : disabledColor;
     }
 }
