@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-3528042820359467613
+--- !u!114 &-5872921334933043717
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Front Limbs
-  m_Shader: {fileID: -6465566751694194690, guid: f95ce0381d38a854a805785303e1176f, type: 3}
+  m_Name: Player Hit Particles
+  m_Shader: {fileID: -6465566751694194690, guid: 9726da2e84197584493667be095a05b4, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -41,7 +41,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
@@ -53,23 +53,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture:
-        m_Texture: {fileID: 2800000, guid: 416ef7d0041621543a10cf9769c64069, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Texture_1:
-        m_Texture: {fileID: 2800000, guid: 416ef7d0041621543a10cf9769c64069, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Texture_2:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Texture_3:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Texture_4:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: b97da7957cbe6a84195ad9228af84e97, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -86,31 +70,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _1_Fuzziness: 0.39
-    - _1_Range: 0.06
-    - _1_Scale: 0.25
-    - _2_Fuzziness: 0.18
-    - _2_Range: 0.06
-    - _2_Scale: 0.25
-    - _3_Fuzziness: 0
-    - _3_Range: 0
-    - _3_Scale: 1
-    - _4_Fuzziness: 0
-    - _4_Range: 0
-    - _4_Scale: 1
-    - _5_Fuzziness: 0
-    - _5_Range: 0
-    - _5_Scale: 1
     - _EnableExternalAlpha: 0
-    - _Scale: 0.45
+    - _Scale: 1
     m_Colors:
-    - _1_Color_To_Replace: {r: 0.5921569, g: 0.3372549, b: 0.1137255, a: 1}
-    - _2_Color_To_Replace: {r: 0.8078432, g: 0.49803925, b: 0.21176472, a: 1}
-    - _3_Color_To_Replace: {r: 0, g: 0, b: 0, a: 0}
-    - _4_Color_To_Replace: {r: 0, g: 0, b: 0, a: 0}
-    - _5_Color_To_Replace: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _Offset: {r: 0.1966443, g: 0.12935254, b: 0, a: 0}
+    - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16d773aa053bebe4fa0b7f156afaf9ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitParticles: {fileID: 7667955331001926580, guid: 09dc676ad9d86c64ba2a8908fab19672, type: 3}
   windUpOffset: {x: -3, y: 4}
   windUpGroupFactor: 0.5
   windUpMoveCurve:

@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class RangeSpecialProjectile : MonoBehaviour
 {
+    [SerializeField] private ParticleSystem hitParticles;
+
     private Rigidbody2D rb;
 
+    [Space]
     [SerializeField] private Vector2 windUpOffset;
     [SerializeField] private float windUpGroupFactor = 2f;
     [SerializeField] private AnimationCurve windUpMoveCurve;
@@ -47,8 +50,7 @@ public class RangeSpecialProjectile : MonoBehaviour
 
         if (collision.CompareTag("Enemy"))
         {
-            PlayerController.AddRingMarker();
-            EnemyController.TakeDamage(damage);
+            HitEnemy();
             Destroy(gameObject);
         }
 
@@ -56,6 +58,16 @@ public class RangeSpecialProjectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void HitEnemy()
+    {
+        PlayerController.AddRingMarker();
+        EnemyController.TakeDamage(damage);
+
+        Vector3 particleSpawnPos = Vector2.Lerp(transform.position, EnemyController.Position, 0.5f) + Random.insideUnitCircle;
+        ParticleSystem particles = Instantiate(hitParticles, particleSpawnPos, Quaternion.identity);
+        Destroy(particles, particles.main.startLifetimeMultiplier);
     }
 
     public void Trigger()

@@ -7,6 +7,7 @@ public class SlashAttack : MonoBehaviour
     [Header("References")]
     [SerializeField] private Hurtbox hurtbox;
     [SerializeField] private TrailRenderer trail;
+    [SerializeField] private ParticleSystem hitParticles;
 
     private Animator anim;
 
@@ -51,5 +52,9 @@ public class SlashAttack : MonoBehaviour
         hurtbox.active = false;
         PlayerController.AddRingMarker();
         EnemyController.TakeDamage(damage);
+
+        Vector3 particleSpawnPos = Vector2.Lerp(trail.transform.position, EnemyController.Position, 0.5f) + Random.insideUnitCircle;
+        ParticleSystem particles = Instantiate(hitParticles, particleSpawnPos, Quaternion.identity);
+        Destroy(particles, particles.main.startLifetimeMultiplier);
     }
 }

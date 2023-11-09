@@ -102,6 +102,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hurtbox: {fileID: 5302054841434624658}
   trail: {fileID: 2938425859705487034}
+  hitParticles: {fileID: 7667955331001926580, guid: 09dc676ad9d86c64ba2a8908fab19672, type: 3}
+  damage: 10
 --- !u!1 &5908627866766341421
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,6 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: Enemy
+  active: 0
 --- !u!1 &6998583204987519355
 GameObject:
   m_ObjectHideFlags: 0
